@@ -1,0 +1,10 @@
+import pyhdb
+connection = pyhdb.connect("URL",30215,"UserID","Password")
+cursor = connection.cursor()
+cursor.execute("SELECT 'Hello Python World' FROM DUMMY")
+cursor.execute("select * from SAPQAL.scmg_t_case_attr where EXT_KEY = '000000000011'")
+result = cursor.fetchone()
+for i in result:
+    print(i)
+
+connection.close()
