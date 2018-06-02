@@ -1,0 +1,1821 @@
+Help(STR) – show the documentation
+Dir(STR) – show the attribute, methods any object associated with that module
+dir(__builtins__ ) :- show all the objects 
+Some changes in Python 3.0:
+•	Print is now a function
+•	Views and iterators instead of lists
+•	The rules for ordering comparisons have been simplified. E.g. a heterogeneous list cannot be sorted, because all the elements of a list must be comparable to each other.
+•	There is only one integer type left, i.e. INT. long is INT as well.
+•	The division of two integers returns a float instead of an integer. "//" can be used to have the "old" behavior.
+•	Text Vs. Data Instead of Unicode Vs. 8-bit
+Strings: -
+Strings are created by putting a sequence of characters in quotes. Strings can be surrounded by single quotes, double quotes or triple quotes.
+  >>> "Hello" + " " + "World"
+'Hello World'
+
+Python Internal: -
+Python is both an interpreted and a compiled language
+But calling Python a compiled language would be misleading.
+the compiler translates the Python code into machine language. Python code is translated into intermediate code, which has to be executed by a virtual machine, known as the PVM, the Python virtual machine.
+>>> import py_compile
+>>> py_compile.compile('my_first_simple_script.py')
+>>> 
+Indentation: -
+Loops and Conditional statements end with a colon ":" - the same is true for functions and other structures introducing blocks.
+>>>from math import sqrt
+n = input("Maximum Number? ")
+n = int(n)+1
+for a in range(1,n):
+    for b in range(a,n):
+        c_square = a**2 + b**2
+        c = int(sqrt(c_square))
+        if ((c_square - c**2) == 0):
+            print(a, b, c)
+ID Function: -
+Every instance (object or variable) has an identity.
+>>> x = 42
+>>> id(x)
+10107136
+>>> y = x
+>>> id(x), id(y)
+(10107136, 10107136)
+>>> y = 78
+>>> id(x), id(y)
+(10107136, 10108288)
+>>> 
+Naming convention: - better use underscore instead of Camel case letter.
+Numbers: -
+>>> x = hex(19)
+>>> x
+'0x13'
+>>> type(x)
+<class 'str'>
+>>> x = bin(65)
+>>> x
+'0b1000001'
+>>> x = oct(65)
+>>> x
+'0o101'
+>>> oct(0b101101)
+'0o55'
+>>>
+Integer Division: -
+•	"true division" performed by "/"
+•	"floor division" performed by "//"
+
+>>> 10 / 3
+3.3333333333333335
+>>> 10 // 3
+3
+
+Unicode Encodings: -
+UTF-32
+UTF-16
+UTF-8
+
+Backslash (\) is the escape character in python.
+>>> s3 = 'It doesn\'t matter!'
+>>> s3 = "It doesn't matter!"
+Same.
+Concatenation: - +
+Repetition: - *
+Indexing: - [0]
+Slicing: - [2:4]
+Size: - LEN(“string”)
+Strings are immutable.
+>>> s = "Some things are immutable!"
+>>> s[-1] = "."
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+>>> 
+
+
+a is b
+a == b is not same.
+a is b will be true if their memory location is same.
+A == B is true if contains same string.
+If a is b then a ==b will always true but reverse is not true.
+Lists: -
+>>> lst = ["Vienna", "London", "Paris", "Berlin", "Zurich", "Hamburg"]
+>>> print(lst[0])
+Vienna
+>>> print(lst[2])
+Paris
+>>> print(lst[-1])
+Hamburg
+>>> 
+The main properties of Python lists:
+•	They are ordered
+•	The contain arbitrary objects
+•	Elements of a list can be accessed by an index
+•	They are arbitrarily nestable, i.e. they can contain other lists as sub lists
+•	Variable size
+•	They are mutable, i.e. the elements of a list can be changed
+ Nested list: -
+ [["London”, “England", 7556900], ["Paris","France",2193031], ["Bern", "Switzerland", 123466]]
+Deeply Nested List: -
+["High up", ["further down", ["and down", ["deep down", "the answer", 42]]]]
+
+Deeply Nested List: -
+>>> complex_list = [["a",["b",["c","x"]]]]
+>>> complex_list = [["a",["b",["c","x"]]],42]
+>>> complex_list[0][1]
+['b', ['c', 'x']]
+>>> complex_list[0][1][1][0]
+'c'
+Pitfalls of repetition:-
+>>> x = ["a","b","c"]
+>>> y = [x] * 4
+>>> y
+[['a', 'b', 'c'], ['a', 'b', 'c'], ['a', 'b', 'c'], ['a', 'b', 'c']]
+>>> y[0][0] = "p"
+>>> y
+[['p', 'b', 'c'], ['p', 'b', 'c'], ['p', 'b', 'c'], ['p', 'b', 'c']]
+>>> 
+ 
+
+This result is quite astonishing for beginners of Python programming. We have assigned a new value to the first element of the first sublist of y, i.e. y[0][0] and we have "automatically" changed the first elements of all the sublists in y, i.e. y[1][0], y[2][0], y[3][0] 
+
+The reason is that the repetition operator "* 4" creates 4 references to the list x: and so it's clear that every element of y is changed, if we apply a new value to y[0][0]. 
+
+Tuple: -
+Immutable
+•	Tuples are faster than lists.
+•	If you know that some data doesn't have to be changed, you should use tuples instead of lists, because this protects your data against accidental changes.
+•	The main advantage of tuples consists in the fact that tuples can be used as keys in dictionaries, while lists can't.
+•	>>> t = ("tuples", "are", "immutable")
+•	>>> t[0]
+•	'tuples'
+•	>>> t[0]="assignments to elements are not possible"
+•	Traceback (most recent call last):
+•	  File "<stdin>", line 1, in <module>
+•	TypeError: 'tuple' object does not support item assignment
+SLICING:-
+>>> str = "Python is great"
+>>> first_six = str[0:6]
+>>> first_six
+'Python'
+>>> starting_at_five = str[5:]
+>>> starting_at_five
+'n is great'
+>>> a_copy = str[:]
+>>> without_last_five = str[0:-5]
+>>> without_last_five
+'Python is '
+>>> 
+If s is a sequential data type, it works like this:
+
+s[begin: end: step]
+
+>>> str = "Python under Linux is great"
+>>> str[::3]
+'Ph d n  e'
+
+Concatenate of sequence:-
+>>> colours1 = ["red", "green","blue"]
+>>> colours2 = ["black", "white"]
+>>> colours = colours1 + colours2
+>>> print(colours)
+['red', 'green', 'blue', 'black', 'white']
+
+Checking if an Element is Contained in List:-
+>>> abc = ["a","b","c","d","e"]
+>>> "a" in abc
+True
+>>> "a" not in abc
+False
+>>> "e" not in abc
+False
+>>> "f" not in abc
+True
+>>> str = "Python is easy!"
+>>> "y" in str
+True
+>>> "x" in str
+False
+>>> 
+
+str * 4
+is the same as
+str + str + str + str
+
+Pitfall of repetition:-
+>>> x = ["a","b","c"]
+>>> y = [x] * 4
+>>> y
+[['a', 'b', 'c'], ['a', 'b', 'c'], ['a', 'b', 'c'], ['a', 'b', 'c']]
+>>> y[0][0] = "p"
+>>> y
+[['p', 'b', 'c'], ['p', 'b', 'c'], ['p', 'b', 'c'], ['p', 'b', 'c']]
+>>> 
+
+This result is quite astonishing for beginners of Python programming. We have assigned a new value to the first element of the first sublist of y, i.e. y[0][0] and we have "automatically" changed the first elements of all the sublists in y, i.e. y[1][0], y[2][0], y[3][0] 
+Changing List:-
+Append:
+>>> lst = [3, 5, 7]
+>>> lst.append(42)
+>>> lst
+[3, 5, 7, 42]
+>>> 
+This method appends an element to the end of the list "s".
+It's import to understand that append returns "None". This means that it usually doesn't make sense to reassign the return value:
+>>> lst = [3, 5, 7]
+>>> lst = lst.append(42)
+>>> print(lst)
+None
+>>> 
+
+>>> lst = [42,98,77]
+>>> lst2 = [8,69]
+>>> lst.append(lst2)
+>>> lst
+[42, 98, 77, [8, 69]]
+>>> 
+
+s.pop(i)
+'pop' returns the ith element of a list s. The element will be removed from the list as well.
+>>> cities = ["Hamburg", "Linz", "Salzburg", "Vienna"]
+>>> cities.pop(0)
+'Hamburg'
+>>> cities
+['Linz', 'Salzburg', 'Vienna']
+>>> cities.pop(1)
+'Salzburg'
+>>> cities
+['Linz', 'Vienna']
+>>> 
+The method 'pop' raises an IndexError exception if the list is empty or the index is out of range.
+s.pop()
+The method 'pop' can be called without an argument. In this case, the last element will be returned. So s.pop() is equivalent to s.pop(-1).
+>>> cities = ["Amsterdam", "The Hague", "Strasbourg"]
+>>> cities.pop()
+'Strasbourg'
+>>> cities
+['Amsterdam', 'The Hague']
+>>> 
+
+Extend:-
+Python provides the method 'extend'. It extends a list by appending all the elements of an iterable like a list, a tuple or a string to a list:
+>>> lst = [42,98,77]
+>>> lst2 = [8,69]
+>>> lst.extend(lst2)
+>>> lst
+[42, 98, 77, 8, 69]
+
+>>> lst = ["a", "b", "c"]
+>>> programming_language = "Python"
+>>> lst.extend(programming_language)
+>>> print(lst)
+['a', 'b', 'c', 'P', 'y', 't', 'h', 'o', 'n']
+
+Now with a tuple:
+>>> lst = ["Java", "C", "PHP"]
+>>> t = ("C#", "Jython", "Python", "IronPython")
+>>> lst.extend(t)
+>>> lst
+['Java', 'C', 'PHP', 'C#', 'Jython', 'Python', 'IronPython']
+>>> 
+
+Extending and Appending Lists with the '+'-Operator
+There is an alternative to 'append' and 'extend'. '+' can be used to combine lists.
+>>> level = ["beginner", "intermediate", "advanced"]
+>>> other_words = ["novice", "expert"]
+>>> level + other_words
+['beginner', 'intermediate', 'advanced', 'novice', 'expert']
+>>> 
+
+import time
+
+n= 100000
+
+start_time = time.time()
+l = []
+for i in range(n):
+    l = l + [i * 2]
+print(time.time() - start_time)
+
+start_time = time.time()
+l = []
+for i in range(n):
+    l += [i * 2]
+print(time.time() - start_time)
+
+start_time = time.time()
+l = []
+for i in range(n):
+    l.append(i * 2)
+print(time.time() - start_time)
+
+We can see that the "+" operator is about 1268 slower than the append method
+Removing an element with remove:-
+>>> colours = ["red", "green", "blue", "green", "yellow"]
+>>> colours.remove("green")
+>>> colours
+['red', 'blue', 'green', 'yellow']
+>>> colours.remove("green")
+>>> colours
+
+Find the Position of an Element in a List:-
+The method "index" can be used to find the position of an element within a list:
+s.index(x[, i[, j]])
+It returns the first index of the value x. A ValueError will be raised, if the value is not present. If the optional parameter i is given, the search will start at the index i. If j is also given, the search will stop at position j.
+>>> colours = ["red", "green", "blue", "green", "yellow"]
+>>> colours.index("green")
+1
+>>> colours.index("green", 2)
+3
+>>> colours.index("green", 3,4)
+3
+>>> colours.index("black")
+Traceback (most recent call last):
+  File "", line 1, in 
+ValueError: 'black' is not in list
+>>> 
+
+Insert:-
+We have learned that we can put an element to the end of a list by using the method "append". To work efficiently with a list, we need also a way to add elements to arbitrary positions inside of a list. This can be done with the method "insert":
+s.insert(index, object)
+An object "object" will be included in the list "s". "object" will be placed before the element s[index]. s[index] will be "object" and all the other elements will be moved one to the right.
+>>> lst = ["German is spoken", "in Germany,", "Austria", "Switzerland"]
+>>> lst.insert(3, "and")
+>>> lst
+['German is spoken', 'in Germany,', 'Austria', 'and', 'Switzerland']
+>>> 
+The functionality of the method "append" can be simulated with insert in the following way:
+>>> abc = ["a","b","c"]
+>>> abc.insert(len(abc),"d")
+>>> abc
+['a', 'b', 'c', 'd']
+>>> 
+Using the Method deep copy from the Module copy: -
+>>> from copy import deepcopy
+>>> 
+>>> lst1 = ['a','b',['ab','ba']]
+>>> 
+>>> lst2 = deepcopy(lst1)
+>>> 
+>>> lst1
+['a', 'b', ['ab', 'ba']]
+>>> lst2
+['a', 'b', ['ab', 'ba']]
+>>> id(lst1)
+139716507600200
+>>> id(lst2)
+139716507600904
+>>> id(lst1[0])
+139716538182096
+>>> id(lst2[0])
+139716538182096
+>>> id(lst2[2])
+139716507602632
+>>> id(lst1[2])
+139716507615880
+>>> 
+
+Dictionary: -
+Dictionaries – are best suited when the data is labelled, i.e., the data is a record with field names.
+lists – are better option to store collections of un-labelled items say all the files and sub directories in a folder. List comprehension is used to construct lists in a natural way.
+Generally Search operation on dictionary object is faster than searching a list object.
+>>> city_population = {"New York City":8550405, "Los Angeles":3971883, "Toronto":2731571, "Chicago":2720546, "Houston":2296224, "Montreal":1704694, "Calgary":1239220, "Vancouver":631486, "Boston":667137}
+>>> city_population["New York City"]
+8550405
+>>> city_population["Toronto"]
+2731571
+>>> city_population["Boston"]
+667137
+We can use arbitrary types as values in a dictionary, but there is a restriction for the keys. Only immutable data types can be used as keys, i.e. no lists or dictionaries can be used: 
+>>> dic = { [1,2,3]:"abc"}
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: list objects are unhashable
+Tuple as keys are okay, as you can see in the following example:
+>>> dic = { (1,2,3):"abc", 3.1415:"abc"}
+>>> dic
+{3.1415: 'abc', (1, 2, 3): 'abc'}
+Operator	Explanation
+len(d)	returns the number of stored entries, i.e. the number of (key,value) pairs.
+del d[k]	deletes the key k together with his value
+k in d	True, if a key k exists in the dictionary d
+k not in d	True, if a key k doesn't exist in the dictionary d
+
+POP () item:
+apitals = {"Austria":"Vienna", "Germany":"Berlin", "Netherlands":"Amsterdam"}>>> capital = capitals.pop("Austria")
+>>> print(capital)
+Vienna
+POPITEM () is a method of dict, which doesn't take any parameter and removes and returns an arbitrary (key,value) pair as a 2-tuple. If popitem() is applied on an empty dictionary, a KeyError will be raised.
+>>> capitals = {"Springfield":"Illinois", "Augusta":"Maine", "Boston": "Massachusetts", "Lansing":"Michigan", "Albany":"New York", "Olympia":"Washington", "Toronto":"Ontario"}
+>>> (city, state) = capitals.popitem()
+>>> (city, state)
+('Olympia', 'Washington')
+>>> print(capitals.popitem())
+('Albany', 'New York')
+>>> print(capitals.popitem())
+('Boston', 'Massachusetts')
+>>> print(capitals.popitem())
+('Lansing', 'Michigan')
+>>> print(capitals.popitem())
+('Toronto', 'Ontario')
+>>> 
+
+If you try to access a key which doesn't exist in dictionary, you will get an error message
+
+trainings = { "course1":{"title":"Python Training Course for Beginners", 
+                         "location":"Frankfurt", 
+                         "trainer":"Steve G. Snake"},
+              "course2":{"title":"Intermediate Python Training",
+                         "location":"Berlin",
+                         "trainer":"Ella M. Charming"},
+              "course3":{"title":"Python Text Processing Course",
+                         "location":"München",
+                         "trainer":"Monica A. Snowdon"}
+              }
+
+trainings2 = trainings.copy()
+
+trainings["course2"]["title"] = "Perl Training Course for Beginners"
+print(trainings2)
+
+>>> w.clear()
+>>> print(w)
+{}
+Update():-
+>>> knowledge = {"Frank": {"Perl"}, "Monica":{"C","C++"}}
+>>> knowledge2 = {"Guido":{"Python"}, "Frank":{"Perl", "Python"}}
+>>> knowledge.update(knowledge2)
+>>> knowledge
+{'Frank': {'Python', 'Perl'}, 'Guido': {'Python'}, 'Monica': {'C', 'C++'}}
+
+>>> d = {"a":123, "b":34, "c":304, "d":99}
+>>> for key in d:
+...     print(key)
+... 
+b
+c
+a
+d
+>>> 
+
+>>> for key in d.keys():
+...     print(key)
+... 
+b
+c
+a
+d
+>>> 
+
+>>> for value in d.values():
+...     print(value)
+... 
+34
+304
+123
+99
+>>> 
+
+for key in d:
+	print(d[key])
+
+d = {"a":123, "b":34, "c":304, "d":99}
+for key in d.keys():
+    x=d[key]
+
+List from dictionary: -
+>>> w = {"house":"Haus", "cat":"", "red":"rot"}
+>>> items_view = w.items()
+>>> items = list(items_view)
+>>> items
+[('house', 'Haus'), ('cat', ''), ('red', 'rot')]
+>>> keys_view = w.keys()
+>>> keys = list(keys_view)
+>>> keys
+['house', 'cat', 'red']
+>>> 
+>>> values_view = w.values()
+>>> values = list(values_view)
+>>> values
+['Haus', '', 'rot']
+>>> values_view
+dict_values(['Haus', '', 'rot'])
+>>> items_view
+dict_items([('house', 'Haus'), ('cat', ''), ('red', 'rot')])
+>>> keys_view
+dict_keys(['house', 'cat', 'red'])
+>>> 
+
+Turn Lists into Dictionary:-
+>>> dishes = ["pizza", "sauerkraut", "paella", "hamburger"]
+>>> countries = ["Italy", "Germany", "Spain", "USA"]
+
+>>> country_specialities_iterator = zip(countries, dishes)
+>>> country_specialities_iterator
+<zip object at 0x7fa5f7cad408>
+>>> country_specialities = list(country_specialities_iterator)
+>>> print(country_specialities)
+[('Italy', 'pizza'), ('Germany', 'sauerkraut'), ('Spain', 'paella'), ('USA', 'hamburger')]
+>>> 
+
+>>> country_specialities_dict = dict(country_specialities)
+>>> print(country_specialities_dict)
+{'USA': 'hamburger', 'Germany': 'sauerkraut', 'Spain': 'paella', 'Italy': 'pizza'}
+>>> 
+
+This can be done directly
+>>> dishes = ["pizza", "sauerkraut", "paella", "hamburger"]
+>>> countries = ["Italy", "Germany", "Spain", "USA"]
+>>> dict(zip(countries, dishes))
+{'USA': 'hamburger', 'Germany': 'sauerkraut', 'Spain': 'paella', 'Italy': 'pizza'}
+>>> 
+
+ The superfluous elements, which cannot be paired, will be ignored:
+
+>>> dishes = ["pizza", "sauerkraut", "paella", "hamburger"]
+>>> countries = ["Italy", "Germany", "Spain", "USA"," Switzerland"]
+>>> country_specialities = list(zip(countries, dishes))
+>>> country_specialities_dict = dict(country_specialities)
+>>> print(country_specialities_dict)
+{'Germany': 'sauerkraut', 'Italy': 'pizza', 'USA': 'hamburger', 'Spain': 'paella'}
+>>> 
+
+Everything in one step:-
+>>> country_specialities_dict = dict(list(zip(["pizza", "sauerkraut", "paella", "hamburger"], ["Italy", "Germany", "Spain", "USA"," Switzerland"])))
+>>> print(country_specialities_dict)
+{'paella': 'Spain', 'hamburger': 'USA', 'sauerkraut': 'Germany', 'pizza': 'Italy'}
+>>>
+
+>>> l1 = ["a","b","c"]
+>>> l2 = [1,2,3]
+>>> c = zip(l1,l2)
+>>> z1 = list(c)
+>>> z2 = list(c)
+>>> print(z1)
+[('a', 1), ('b', 2), ('c', 3)]
+>>> print(z2)
+[]
+
+dishes = ["pizza", "sauerkraut", "paella", "hamburger"]
+countries = ["Italy", "Germany", "Spain", "USA"]
+country_specialities_zip = zip(dishes,countries)
+print(list(country_specialities_zip))
+country_specialities_list = list(country_specialities_zip)
+country_specialities_dict = dict(country_specialities_list)
+print(country_specialities_dict)
+
+Sets:-
+>>> x = set("A Python Tutorial")
+>>> x
+{'A', ' ', 'i', 'h', 'l', 'o', 'n', 'P', 'r', 'u', 't', 'a', 'y', 'T'}
+>>> type(x)
+<class 'set'>
+>>> 
+
+>>> x = set(["Perl", "Python", "Java"])
+>>> x
+{'Python', 'Java', 'Perl'}
+>>> 
+
+>>> cities = set(("Paris", "Lyon", "London","Berlin","Paris","Birmingham"))
+>>> cities
+{'Paris', 'Birmingham', 'Lyon', 'London', 'Berlin'}
+>>> 
+
+Immutable Sets:-
+>>> cities = set((("Python","Perl"), ("Paris", "Berlin", "London")))
+>>> cities = set((["Python","Perl"], ["Paris", "Berlin", "London"]))
+
+>>> cities = set((("Python","Perl"), ("Paris", "Berlin", "London")))
+>>> cities = set((["Python","Perl"], ["Paris", "Berlin", "London"]))
+
+Though sets can't contain mutable objects, sets are mutable: 
+>>> cities = set(["Frankfurt", "Basel","Freiburg"])
+>>> cities.add("Strasbourg")
+>>> cities
+{'Freiburg', 'Basel', 'Frankfurt', 'Strasbourg'}
+>>> 
+We can define sets (since Python2.6) without using the built-in set function. We can use curly braces instead: 
+
+>>> adjectives = {"cheap","expensive","inexpensive","economical"}
+>>> adjectives
+{'inexpensive', 'cheap', 'expensive', 'economical'}
+>>> 
+
+Frozensets are like sets except that they cannot be changed, i.e. they are immutable:
+>>> cities = frozenset(["Frankfurt", "Basel","Freiburg"])
+>>> cities.add("Strasbourg")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'frozenset' object has no attribute 'add'
+>>> 
+
+Input:-
+name = input("What's your name? ")
+print("Nice to meet you " + name + "!")
+age = input("Your age? ")
+print("So, you are already " + age + " years old, " + name + "!")
+
+>>> cities_canada = input("Largest cities in Canada: ")
+Largest cities in Canada: ["Toronto", "Montreal", "Calgara", "Ottawa"]
+>>> print(cities_canada, type(cities_canada))
+["Toronto", "Montreal", "Calgara", "Ottawa"] <class 'str'>
+>>> 
+>>> cities_canada = eval(input("Largest cities in Canada: "))
+Largest cities in Canada: ["Toronto", "Montreal", "Calgara", "Ottawa"]
+>>> print(cities_canada, type(cities_canada))
+['Toronto', 'Montreal', 'Calgara', 'Ottawa'] <class 'list'>
+>>> 
+>>> population = input("Population of Toronto? ")
+Population of Toronto? 2615069
+>>> print(population, type(population))
+2615069 <class 'str'>
+>>> 
+>>> population = int(input("Population of Toronto? "))
+Population of Toronto? 2615069
+>>> print(population, type(population))
+2615069 <class 'int'>
+>>>
+
+ 
+
+Conditional Statement:-
+person = input("Nationality? ")
+if person == "french" or person == "French" :
+    print("Préférez-vous parler français?")
+elif person == "italian" or person == "Italian":
+    print("Preferisci parlare italiano?")
+else:
+    print("You are neither Italian nor French,")
+    print("so we have to speak English with each other.")
+
+Using a while Loop for Reading Standard Input
+They are contained in the module sys. Their names are:
+•	sys.stdin
+•	sys.stdout
+•	sys.stderror
+.
+The following script shows how to read with a while loop character by character from standard input (keyboard).
+import sys 
+
+text = ""
+while 1:
+   c = sys.stdin.read(1)
+   text = text + c
+   if c == '\n':
+       break
+
+print("Input: %s" % text)
+
+Random Number:- While loop has optional else part
+import random
+n = 20
+to_be_guessed = int(n * random.random()) + 1
+guess = 0
+while guess != to_be_guessed:
+    guess = int(input("New number: "))
+    if guess > 0:
+        if guess > to_be_guessed:
+            print("Number too large")
+        elif guess < to_be_guessed:
+            print("Number too small")
+    else:
+        print("Sorry that you're giving up!")
+        break
+else:
+    print("Congratulation. You made it!")
+
+FOR Loop:-
+edibles = ["ham", "spam","eggs","nuts"]
+for food in edibles:
+    if food == "spam":
+        print("No more spam please!")
+        break
+    print("Great, delicious " + food)
+else:
+    print("I am so glad: No spam!")
+print("Finally, I finished stuffing myself")
+
+else part may or maynot there with For loop.
+Range() :-
+>>> range(10)
+range(0, 10)
+>>> list(range(10))
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> 
+
+range(begin,end, step)
+
+The range() function is especially useful in combination with the for loop, as we can see in the following example. The range() function supplies the numbers from 1 to 100 for the for loop to calculate the sum of these numbers:
+n = 100
+
+sum = 0
+for counter in range(1,n+1):
+    sum = sum + counter
+
+print("Sum of 1 until %d: %d" % (n,sum))
+
+If you loop over a list, it's best to avoid changing the list in the loop body. To give you an example, what can happen, have a look at the following example:
+colours = ["red"]
+for i in colours:
+    if i == "red":
+        colours += ["black"]
+    if i == "black":
+        colours += ["white"]
+print(colours)
+What will be printed by "print(colours)"?
+['red', 'black', 'white']
+To avoid these side effects, it's best to work on a copy by using the slicing operator, as can be seen in the next example:
+colours = ["red"]
+for i in colours[:]:
+    if i == "red":
+        colours += ["black"]
+    if i == "black":
+        colours += ["white"]
+print(colours)
+Now the output looks like this:
+['red', 'black']
+We still might have done something, what we shouldn't have done. We changed the list "colours", but our change hasn't had any effect on the loop anymore. The elements to be looped remained the same during the iterations. 
+Print()
+>>> print("a = ", a)
+a =  3.564
+>>> print("a = \n", a)
+a = 
+ 3.564
+>>> 
+
+>>> print("a","b")
+a b
+>>> print("a","b",sep="")
+ab
+>>> print(192,168,178,42,sep=".")
+192.168.178.42
+>>> print("a","b",sep=":-)")
+a:-)b
+>>>
+
+A print call is ended by a newline, as we can see in the following usage:
+>>> for i in range(4):
+...     print(i)
+... 
+0
+1
+2
+3
+>>> 
+
+To change this behaviour, we can assign an arbitrary string to the keyword parameter "end". This string will be used for ending the output of the values of a print call:
+>>> for i in range(4):
+...     print(i, end=" ")
+... 
+0 1 2 3 >>> 
+>>> for i in range(4):
+...     print(i, end=" :-) ")
+... 
+0 :-) 1 :-) 2 :-) 3 :-) >>> 
+
+Formatted Output: -
+Format ()
+Person = {“name”:”jenn”,”age”:23}
+Sentence = ‘my name is {} and I am {} years old’.format(person[‘name’],person[‘age’] 
+Print(sentence).
+
+>>> data = dict(province="Ontario",capital="Toronto")
+>>> data
+{'province': 'Ontario', 'capital': 'Toronto'}
+>>> print("The capital of {province} is {capital}".format(**data))
+The capital of Ontario is Toronto
+
+The double "*" in front of data turns data automatically into the form 'province="Ontario",capital="Toronto"'. 
+capital_country = {"United States" : "Washington", 
+                   "US" : "Washington", 
+                   "Canada" : "Ottawa",
+                   "Germany": "Berlin",
+                   "France" : "Paris",
+                   "England" : "London",
+                   "UK" : "London",
+                   "Switzerland" : "Bern",
+                   "Austria" : "Vienna",
+                   "Netherlands" : "Amsterdam"}
+
+print("Countries and their capitals:")
+for c in capital_country:
+    print("{country}: {capital}".format(country=c, capital=capital_country[c]))
+
+"locals" is a function, which returns a dictionary with the current scope's local variable
+>>> a = 42
+>>> b = 47
+>>> def f(): return 42
+... 
+>>> locals()
+{'a': 42, 'b': 47, 'f': <function f at 0xb718ca6c>, '__builtins__': <module 'builtins' (built-in)>, '__package__': None, '__name__': '__main__', '__doc__': None}
+>>> 
+
+Center()
+>>> s = "Python"
+>>> s.center(10)
+'  Python  '
+>>> s.center(10,"*")
+'**Python**'
+Ljust()
+>>> s = "Training"
+>>> s.ljust(12)
+'Training    '
+>>> s.ljust(12,":")
+'Training::::'
+>>>
+
+Rjust()
+>>> s = "Programming"
+>>> s.rjust(15)
+'    Programming'
+>>> s.rjust(15, "~")
+'~~~~Programming'
+>>> 
+
+Formatted string literals in python 3.6:-
+>>> price = 11.23
+>>> f"Price in Euro: {price}"
+'Price in Euro: 11.23'
+>>> f"Price in Swiss Franks: {price * 1.086}"
+'Price in Swiss Franks: 12.195780000000001'
+Functions: -
+Can contain more than one Return statement.
+def no_return(x,y):
+    c = x + y
+
+res = no_return(4,5)
+print(res)
+output will be None, because function is not return anything.
+def empty_return(x,y):
+    c = x + y
+    return
+
+res = empty_return(4,5)
+print(res)
+ same output. Print None.
+def return_sum(x,y):
+    c = x + y
+    return c
+
+res = return_sum(4,5)
+print(res)
+9
+
+Optional parameter: - 
+def Hello(name="everybody"):
+    """ Greets a person """
+    print("Hello " + name + "!")
+
+Hello("Peter")
+Hello()
+The output is below
+Hello Peter!
+Hello everybody!
+
+Returning Multiple values: -
+A function can return exactly one value, or we should better say one object. An object can be a numerical value, like an integer or a float. But it can also be e.g. a list or a dictionary. So, if we have to return for example 3 integer values, we can return a list or a tuple with these three integer values. This means that we can indirectly return multiple values.
+def fib_intervall(x):
+    """ returns the largest fibonacci
+    number smaller than x and the lowest
+    fibonacci number higher than x"""
+    if x < 0:
+        return -1
+    (old,new, lub) = (0,1,0)
+    while True:
+        if new < x:
+            lub = new 
+            (old,new) = (new,old+new)
+        else:
+            return (lub, new)
+            
+while True:
+    x = int(input("Your number: "))
+    if x <= 0:
+        break
+    (lub, sup) = fib_intervall(x)
+    print("Largest Fibonacci Number smaller than x: " + str(lub))
+    print("Smallest Fibonacci Number larger than x: " + str(sup))
+
+Docstring: -
+The first statement in the body of a function is usually a string, which can be accessed with function_name.__doc__ 
+This statement is called Docstring. 
+def Hello(name="everybody"):
+    """ Greets a person """
+    print("Hello " + name + "!")
+
+print("The docstring of the function Hello: " + Hello.__doc__)
+Local & Global variable in functions: -
+def f(): 
+    s = "Perl"
+    print(s) 
+
+
+s = "Python"
+f()
+print(s)
+>>Perl
+>>Python
+
+
+
+
+def f(): 
+    print(s)
+    s = "Perl"
+    print(s)
+
+
+s = "Python" 
+f()
+print(s)
+>>error local variable 's' referenced before assignment	
+ One more example: -
+def f(): 
+    print(s) 
+s = "I love Paris in the summer!"
+f()
+>> I love Paris in the summer!
+
+def f():
+    global s
+    print(s)
+    s = "Only in spring, but London is great as well!"
+    print(s)
+
+
+s = "I am looking for a course in Paris!" 
+f()
+print(s)
+>>I am looking for a course in Paris!
+>>Only in spring, but London is great as well!
+>>Only in spring, but London is great as well!
+
+Local variables of functions can't be accessed from outside, when the function call has finished:
+def f():
+    s = "I am globally not known"
+    print(s) 
+
+f()
+print(s)
+
+We made the variable s global inside of the script on the left side. Therefore anything we do to s inside of the function body of f is done to the global variable s outside of f.
+def f():
+    global s
+    print(s)
+    s = "dog"
+    print(s) 
+s = "cat" 
+f()
+print(s)
+Global keyword inside nested function:-
+def f():
+    x = 42
+    def g():
+        global x
+        x = 43
+    print("Before calling g: " + str(x))
+    print("Calling g now:")
+    g()
+    print("After calling g: " + str(x))
+    
+f()
+print("x in main: " + str(x))
+>>Before calling g: 42
+>>Calling g now:
+>>After calling g: 42
+>>x in main: 43
+Nonlocal Variable:-
+ython3 introduced nonlocal variables as a new kind of variables. nonlocal variables have a lot in common with global variables. One difference to global variables lies in the fact that it is not possible to change variables from the module scope, i.e. variables which are not defined inside of a function, by using the nonlocal statement
+
+def f():
+    nonlocal x
+    print(x)
+    
+x = 3
+f()
+This means that nonlocal bindings can only be used inside of nested functions. A nonlocal variable has to be defined in the enclosing function scope. If the variable is not defined in the enclosing function scope, the variable cannot be defined in the nested scope. This is another difference to the "global" semantics.
+def f():
+    x = 42
+    def g():
+        nonlocal x
+        x = 43
+    print("Before calling g: " + str(x))
+    print("Calling g now:")
+    g()
+    print("After calling g: " + str(x))
+    
+x = 3
+f()
+print("x in main: " + str(x))
+
+Arbitrary no of Parameters: -
+def arithmetic_mean(first, *values):
+    """ This function calculates the arithmetic mean of a non-empty
+        arbitrary number of numerical values """
+
+    return (first + sum(values)) / (1 + len(values))
+
+print(arithmetic_mean(45,32,89,78))
+print(arithmetic_mean(8989.8,78787.78,3453,78778.73))
+print(arithmetic_mean(45,32))
+print(arithmetic_mean(45))
+Results:
+61.0
+42502.3275
+38.5
+45.0
+
+This is great, but we have still have one problem. You may have a list of numerical values. Like for example
+x = [3, 5, 9]
+You cannot call it with
+arithmetic_mean(x)
+because "arithmetic_mean" can't cope with a list. Calling it with
+arithmetic_mean(x[0], x[1], x[2])
+is cumbersome and above all impossible inside of a program, because list can be of arbitrary length. 
+
+The solution is easy. We add a star in front of the x, when we call the function.
+arithmetic_mean(*x)
+This will "unpack" or singularize the list. 
+One More example: -
+my_list = [('a', 232),('b', 343),('c', 543),('d', 23)]
+a = list(zip(*my_list))
+print(a)
+>> [('a', 'b', 'c', 'd'), (232, 343, 543, 23)]
+Keyword Parameters: -
+If you assign some value in definition of function, it becomes 
+def sumsub(a, b, c=0, d=0):
+    return a - b + c - d
+
+print(sumsub(12,4))
+print(sumsub(42,15,d=10))
+
+Arbitrary no of keyword parameter:-
+We use *args when we aren’t sure how many arguments are going to be passed to a function, or if we want to pass a stored list or tuple of arguments to a function. **kwargsis used when we don’t know how many keyword arguments will be passed to a function, or it can be used to pass the values of a dictionary as keyword arguments. The identifiers args andkwargs are a convention, you could also use *bob and **billy but that would not be wise.
+>>> def f(**kwargs):
+        print(kwargs)
+
+>>> f()
+{}
+>>> f(de="German",en="English",fr="French")
+{'fr': 'French', 'de': 'German', 'en': 'English'}
+>>> 
+One use case is the following:
+>>> def f(a,b,x,y):
+       print(a,b,x,y)
+>>> d = {'a':'append', 'b':'block','x':'extract','y':'yes'}
+>>> f(**d)
+('append', 'block', 'extract', 'yes')
+
+Recursive function: -
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+Parameters in Python: -
+ Python uses a mechanism, which is known as "Call-by-Object", sometimes also called "Call by Object Reference" or "Call by Sharing".
+def ref_demo(x):
+    print("x=",x," id=",id(x))
+    x=42
+    print("x=",x," id=",id(x))
+
+>>> x = 9
+>>> id(x)
+9251936
+>>> ref_demo(x)
+x= 9  id= 9251936
+x= 42  id= 9252992
+>>> id(x)
+9251936
+>>> 
+
+This means that Python initially behaves like call-by-reference, but as soon as we are changing the value of such a variable, i.e. as soon as we assign a new object to it, Python "switches" to call-by-value
+>>> def no_side_effects(cities):
+...     print(cities)
+...     cities = cities + ["Birmingham", "Bradford"]
+...     print(cities)
+... 
+>>> locations = ["London", "Leeds", "Glasgow", "Sheffield"]
+>>> no_side_effects(locations)
+['London', 'Leeds', 'Glasgow', 'Sheffield']
+['London', 'Leeds', 'Glasgow', 'Sheffield', 'Birmingham', 'Bradford']
+>>> print(locations)
+['London', 'Leeds', 'Glasgow', 'Sheffield']
+>>> 
+This changes drastically, if we increment the list by using augmented assignment operator +=. To show this, we change the previous function rename it to "side_effects" in the following example:
+>>> def side_effects(cities):
+...     print(cities)
+...     cities += ["Birmingham", "Bradford"]
+...     print(cities)
+... 
+>>> locations = ["London", "Leeds", "Glasgow", "Sheffield"]
+>>> side_effects(locations)
+['London', 'Leeds', 'Glasgow', 'Sheffield']
+['London', 'Leeds', 'Glasgow', 'Sheffield', 'Birmingham', 'Bradford']
+>>> print(locations)
+['London', 'Leeds', 'Glasgow', 'Sheffield', 'Birmingham', 'Bradford']
+>>> 
+The user of this function can prevent this side effect by passing a copy to the function and use of slice operator.
+>>> def side_effects(cities):
+...     print(cities)
+...     cities += ["Paris", "Marseille"]
+...     print(cities)
+... 
+>>> locations = ["Lyon", "Toulouse", "Nice", "Nantes", "Strasbourg"]
+>>> side_effects(locations[:])
+['Lyon', 'Toulouse', 'Nice', 'Nantes', 'Strasbourg']
+['Lyon', 'Toulouse', 'Nice', 'Nantes', 'Strasbourg', 'Paris', 'Marseille']
+>>> print(locations)
+['Lyon', 'Toulouse', 'Nice', 'Nantes', 'Strasbourg']
+>>> 
+‘*’ in function call: -
+>>> def f(x,y,z):
+      print(x,y,z)
+>>> p = (47,11,12)
+>>> f(*p)
+(47, 11, 12)
+here is hardly any need to mention that this way of calling our function is more comfortable than the following one:
+>>> f(p[0],p[1],p[2])
+(47, 11, 12)
+>>> 
+File Processing: -
+Read a file: -
+fobj = open("ad_lesbiam.txt", "r")
+fobj = open("ad_lesbiam.txt”)
+fobj.close()
+
+Write into a file: -
+fh = open("example.txt", "w")
+fh.write("To write or not to write\nthat is the question!\n")
+fh.close()
+We will often find the with statement for reading and writing files. The advantage is that the file will be automatically closed after the indented block after the with has finished execution: 
+
+with open("example.txt", "w") as fh:
+    fh.write("To write or not to write\nthat is the question!\n")
+
+the method RSTRIP () in the following example is used to strip off whitespaces (newlines included) from the right side of the string "line": 
+
+fobj = open("ad_lesbiam.txt")
+for line in fobj:
+    print(line.rstrip())
+fobj.close()
+READLINES ()
+ - reads all the lines and put them in 'list'(between these [ ]) and displays them with each line ending with'\n'
+ f.read() reads the file as an individual string, and so allows relatively easy file-wide manipulations, such as a file-wide regex search or substitution.
+f.readline() reads a single line of the file, allowing the user to parse a single line without necessarily reading the entire file. Using f.readline() can also allows easier application of logic in reading the file than a complete line by line iteration, such as when a file changes format partway through.
+fp = open('test.txt')
+fp.readline()
+Out[29]: 'line1\n'
+
+fp = open('test.txt')
+fp.readlines()
+Out[30]: ['line1\n', 'line2\n', 'line3\n', 'line4\n', 'line5\n', 'line6']
+
+fp = open('test.txt')
+fp.read()
+Out[31]: 'line1\nline2\nline3\nline4\nline5\nline6'
+
+Resetting the files in Current position: -
+Seek()
+fh.seek(9)
+Tell () "tells" us the current position
+you want to open an existing file for read and write, you should better use "r+", because this will not delete the content of the file.
+  r->Only read.
+rb->read binary
+r+->reading and writing.
+rb+->reading and writing in binary format.
+w->write
+wb->write binary,overwrite
+r,rb,r+,rb+
+w,wb,w+,wb+
+a,ab,a+,ab+
+For file operation, we have a inbuild module PICKLE.
+>>> import pickle
+>>>
+>>> cities = ["Paris", "Dijon", "Lyon", "Strasbourg"]
+>>> fh = open("data.pkl", "bw")
+>>> pickle.dump(cities, fh)
+>>> fh.close()
+
+>>> import pickle
+>>> f = open("data.pkl", "rb")
+>>> villes = pickle.load(f)
+>>> print(villes)
+['Paris', 'Dijon', 'Lyon', 'Strasbourg']
+>>>
+
+>>> import pickle
+>>> fh = open("data.pkl","bw")
+>>> programming_languages = ["Python", "Perl", "C++", "Java", "Lisp"]
+>>> python_dialects = ["Jython", "IronPython", "CPython"]
+>>> pickle_object = (programming_languages, python_dialects)
+>>> pickle.dump(pickle_object,fh)
+>>> fh.close()
+
+>>> import pickle
+>>> f = open("data.pkl","rb")
+>>> (languages, dialects) = pickle.load(f)
+>>> print(languages, dialects)
+['Python', 'Perl', 'C++', 'Java', 'Lisp'] ['Jython', 'IronPython', 'CPython']
+>>>
+
+pickle module is only capable of pickling one object at the time.
+
+Shelve module:
+Let's imagine this data object is a dictionary. 
+It may be desirable that we don't have to save and load every time the whole dictionary, but save and load just a single value corresponding to just one key. The shelve module is the solution to this request. A "shelf" - as used in the shelve module - is a persistent, dictionary-like object.
+>>> import shelve
+>>> s = shelve.open("MyShelve")
+>>> s["street"] = "Fleet Str"
+>>> s["city"] = "London"
+>>> for key in s:
+...     print(key)
+... 
+city
+street
+
+s.close()
+
+Modular Programming: -
+You save the program as Fibonacci.py
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+def ifib(n):
+    a, b = 0, 1
+    for i in range(n):
+        a, b = b, a + b
+    return a
+If you want to access this module, use this way.
+>>> import fibonacci
+>>> fibonacci.fib(7)
+13
+>>> fibonacci.fib(20)
+6765
+>>> fibonacci.ifib(42)
+267914296
+>>> fibonacci.ifib(1000)
+
+Reload(Fibonacci)
+Reload can not be done in python3 but can be done python2.
+Module search path:-
+>>> import numpy
+>>> numpy.__file__
+'/usr/lib/python3/dist-packages/numpy/__init__.py'
+>>>
+>>> import random
+>>> random.__file__
+'/usr/lib/python3.5/random.py'
+>>>
+
+Content of a module: -
+>>> import math
+>>> dir(math
+It's possible to get a list of the Built-in functions, exceptions, and other objects by importing the builtins module:
+>>> import builtins
+>>> dir(builtins)
+Packages: -
+A package is basically a directory with Python files and a file with the name __init__.py. This means that every directory inside of the Python path, which contains a file named __init__.py, will be treated as a package by Python.
+The content of a.py:
+def bar():
+    print("Hello, function 'bar' from module 'a' calling")
+
+he content of b.py:
+def foo():
+    print("Hello, function 'foo' from module 'b' calling")
+
+We will also add an empty file with the name __init__.py inside of simple_package directory. 
+>>> from simple_package import a, b
+>>> a.bar()
+Hello, function 'bar' from module 'a' calling
+>>> b.foo()
+Hello, function 'foo' from module 'b' calling
+>>> 
+
+import simple_package.a
+import simple_package.b
+It will work now:
+>>> import simple_package
+>>> 
+>>> simple_package.a.bar()
+Hello, function 'bar' from module 'a' calling
+>>> 
+>>> simple_package.b.foo()
+Hello, function 'foo' from module 'b' calling
+
+Regular expression:-
+r"M[ae][iy]er"
+findall() – finds all the occurrences of match and return them as a list
+finditer() – finds all the occurrences of match and return them as an iterator.
+match() – matches the pattern only to the beginning of the String.
+search() – scan the string and look for a location the pattern matches 
+Matches as : Maier, Mayer,Meier,Meyer.
+Square brackets, "[" and "]", are used to include a character class. [xyz] means e.g. either an "x", an "y" or a "z". 
+[a-e] means abcde
+[0-5] means 012345
+[A-Z] A to Z
+[A-Za-z]
+[-az] is only the choice between the three characters "-", "a" and "z", 
+The same is true for [az-]. 
+[^0-9]- Any character but not digits.
+[^abc] any char not a, b, c
+import re
+
+fh = open("simpsons_phone_book.txt")
+for line in fh:
+    if re.search(r"J.*Neu",line):
+        print(line.rstrip())
+fh.close()
+
+The special sequences consist of "\\" and a character from the following list:
+\d	Matches any decimal digit; equivalent to the set [0-9].
+\D	The complement of \d. It matches any non-digit character; equivalent to the set [^0-9].
+\s	Matches any whitespace character; equivalent to [ \t\n\r\f\v].
+\S	The complement of \s. It matches any non-whitespace character; equiv. to [^ \t\n\r\f\v].
+\w	Matches any alphanumeric character; equivalent to [a-zA-Z0-9_]. With LOCALE, it will match the set [a-zA-Z0-9_] plus characters defined as letters for the current locale.
+\W	Matches the complement of \w.
+\b	Matches the empty string, but only at the start or end of a word.
+\B	Matches the empty string, but not at the start or end of a word.
+\\	Matches a literal backslash.
+
+Write a regular expression which matches strings which starts with a sequence of digits - at least one digit - followed by a blank and after this arbitrary characters. 
+r"^[0-9][0-9]* "
+
+Let's assume that there is no city name in Switzerland, which consists of less than 3 letters, at least 3 letters. We can denote this by [A-Za-z]{3,}. Now we have to recognize lines with German post code (5 digits) lines as well, i.e. the post code can now consist of either four or five digits:
+r"^[0-9]{4,5} [A-Z][a-z]{2,}"
+
+^ - search only at start. But inside char class like [^abc],it ignores the character
+& - search only at end.
+Let’s take an arbitrary string
+Import re
+Text_to_search = ‘jkjwkjeio39982mdmmfdmfmmewqk’
+Pattern = re.compile(r’abc’)
+Matches = pattern.finditer(text_to_search)
+For match in matches:
+	Print(match)
+o/p:-
+_sre.SRE_Match objects: span(1,4) Match(‘abc’)
+
+
+Re.compile(r’^start)
+Re.compile(r’end$)
+
+Example match for a phone no
+467-747-7378
+234-453-2789
+Re.compile(r’/d/d/d./d/d/d./d/d/d/d)
+
+. is the special character catcher?
+Quantifiers in Regular expression:-
+* 0 or more
++ 1 or more
+? 0 or One
+we can match dates like "Feb 2011" or February 2011"
+r"Feb(ruary)? 2011"
+
+{3} exact no 
+{3,4} range of no from min to max
+Re.M is multiline 
+Group: -
+import re
+mo = re.search("[0-9]+", "Customer number: 232454, Date: February 12, 2011")
+mo.group()
+output: - 232454
+A match object contains the methods group (), span(), start() and end()
+>>> import re
+>>> mo = re.search("([0-9]+).*: (.*)", "Customer number: 232454, Date: February 12, 2011")
+>>> mo.group()
+'232454, Date: February 12, 2011'
+>>> mo.group(1)
+'232454'
+>>> mo.group(2)
+'February 12, 2011'
+>>> mo.group(1,2)
+('232454', 'February 12, 2011')
+>>> 
+
+
+Let s ay you want to match mr.,mrs,mrs etc
+r ‘M(r|s|rs)
+or r ‘(mr|ms|mrs|)
+
+Find all Matched string:-
+>>> t="A fat cat doesn't eat oat but a rat eats bats."
+>>> mo = re.findall("[force]at", t)
+>>> print(mo)
+['fat', 'cat', 'eat', 'oat', 'rat', 'eat']
+
+If you want to use the same regexp more than once in a script, it might be a good idea to use a regular expression object, i.e. the regex is compiled. 
+
+The general syntax:
+re.compile(pattern[, flags])
+
+Spiting of string with or without regular expression:-
+
+There is a string method split, which can be used to split a string into a list of substrings. 
+
+str.split([sep[, maxsplit]]) 
+
+As you can see, the method split has two optional parameters. If none is given (or is None) , a string will be separated into substring using whitespaces as delimiters, i.e. every substring consisting purely of whitespaces is used as a delimiter. 
+Search and replace with SUB: -
+re.sub(regex, replacement, subject)
+Every match of the regular expression regex in the string subject will be replaced by the string replacement. 
+Example:
+>>> import re
+>>> str = "yes I said yes I will Yes."
+>>> res = re.sub("[yY]es","no", str)
+>>> print(res)
+no I said no I will no.
+To modify the strings, Python’s “re” module is providing 3 methods. They are:
+split() – uses a regex pattern to “split” a given string into a list.
+sub() – finds all substrings where the regex pattern matches and then replace them with a different string
+subn() – it is similar to sub() and also returns the new string along with the no. of
+replacements.
+Findall method:-
+>>> t="A fat cat doesn't eat oat but a rat eats bats."
+>>> mo = re.findall("[force]at", t)
+>>> print(mo)
+['fat', 'cat', 'eat', 'oat', 'rat', 'eat']
+re.I – Ignore Case
+re.L -  Locale language
+re.M – Multiline:  ^ and $ will match at the beginning and at the end of each line and not just at the beginning and the end of the string
+re.U – Unicode
+re.X  - Vebose
+
+LAMBDA function: -
+lambda argument list: expression 
+>>> sum = lambda x, y : x + y
+>>> sum(3,4)
+7
+MAP function:-
+r = map(func, seq)
+>>> C = [39.2, 36.5, 37.3, 38, 37.8] 
+>>> F = list(map(lambda x: (float(9)/5)*x + 32, C))
+>>> print(F)
+[102.56, 97.7, 99.14, 100.4, 100.03999999999999]
+
+>>> a = [1,2,3,4]
+>>> b = [17,12,11,10]
+>>> c = [-1,-4,5,9]
+>>> list(map(lambda x,y:x+y, a,b))
+[18, 14, 14, 14]
+
+Filtering:
+filter (function, sequence)
+>>> fibonacci = [0,1,1,2,3,5,8,13,21,34,55]
+>>> odd_numbers = list(filter(lambda x: x % 2, fibonacci))
+>>> print(odd_numbers)
+[1, 1, 3, 5, 13, 21, 55]
+
+Reduce function:-
+reduce (func, seq)
+>>> import functools
+>>> functools.reduce(lambda x,y: x+y, [47,11,42,13])
+113
+>>> 
+
+>>> from functools import reduce
+>>> f = lambda a,b: a if (a > b) else b
+>>> reduce(f, [47,11,42,102,13])
+102
+>>>
+
+LIST comprehension: -
+Nums = [1,2,3,4,5,6]
+My_list = [n*n for n in Nums]
+Print(My_list)
+In list comprehension 1st write the things what to do you want to return or result.
+>>> colours = [ "red", "green", "yellow", "blue" ]
+>>> things = [ "house", "car", "tree" ]
+>>> coloured_things = [ (x,y) for x in colours for y in things ]
+>>> print(coloured_things)
+[('red', 'house'), ('red', 'car'), ('red', 'tree'), ('green', 'house'), ('green', 'car'), ('green', 'tree'), ('yellow', 'house'), ('yellow', 'car'), ('yellow', 'tree'), ('blue', 'house'), ('blue', 'car'), ('blue', 'tree')]
+>>> 
+[(x,y,z) for x in range(1,30) for y in range(x,30) for z in range(y,30) if x**2 + y**2 == z**2]
+
+Generator Comprehension:-
+>>> x = (x **2 for x in range(20))
+>>> print(x)
+ at 0xb7307aa4>
+>>> x = list(x)
+>>> print(x)
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361]
+Set comprehension: -
+from math import sqrt
+n = 100
+sqrt_n = int(sqrt(n))
+no_primes = {j for i in range(2, sqrt_n+1) for j in range(i*2, n, i)}
+Iterators: -
+expertises = ["Novice", "Beginner", "Intermediate", "Proficient", "Experienced", "Advanced"]
+expertises_iterator = iter(expertises)
+next(expertises_iterator)
+'Novice'
+next(expertises_iterator)
+'Beginner'
+After executing all the items: stop iteration exception will be generated.
+To handle this other_cities = ["Strasbourg", "Freiburg", "Stuttgart", 
+                "Vienna / Wien", "Hannover", "Berlin", 
+                "Zurich"]
+
+city_iterator = iter(other_cities)
+while city_iterator:
+    try:
+        city = next(city_iterator)
+        print(city)
+    except StopIteration:
+        break
+
+
+Generators: -
+Generators do not hold entire results in memory
+It yields one result at a time
+The yield statement turns a function into a generator.
+ This generator object can be seen like a function which produces a sequence of results instead of a single object.
+def city_generator():
+    yield("London")
+    yield("Hamburg")
+    yield("Konstanz")
+    yield("Amsterdam")
+    yield("Berlin")
+    yield("Zurich")
+    yield("Schaffhausen")
+    yield("Stuttgart")
+    
+city = city_generator()
+print(next(city))    
+print(next(city))  
+print(next(city))  
+One more example:-
+def fibonacci(n):
+    """ A generator for creating the Fibonacci numbers """
+    a, b, counter = 0, 1, 0
+    while True:
+        if (counter > n): 
+            return
+        yield b    # you can yield a or b
+        a, b = b, a + b
+        counter += 1
+f = fibonacci(10)
+for x in f:
+    print(x, " ", end="") # 
+print()
+Output:- 1  1  2  3  5  8  13  21  34  55  89  
+def square_numbers(num):
+	for i in num:
+		yield(i*i)
+my_nums = square_numbers([1,2,3,4])
+print(my_nums)
+print next(my_nums)
+or we can write in a for loop.
+for num in my_nums:
+    print(num)
+Generators are memory efficient.
+My_nums = (x * x for x in [1,2,3,4,5])
+
+A return statement inside of a generator is equivalent to raise StopIteration() 
+Example with exception:-
+>>> def gen():
+...     yield 1
+...     raise StopIteration(42)
+... 
+>>> 
+>>> g = gen()
+>>> next(g)
+1
+>>> next(g)
+Traceback (most recent call last):
+  File "", line 1, in 
+  File "", line 3, in gen
+StopIteration: 42
+>>> 
+
+Example with Return: -
+>>> def gen():
+...     yield 1
+...     return 42
+... 
+>>> 
+>>> g = gen()
+>>> next(g)
+1
+>>> next(g)
+Traceback (most recent call last):
+  File "", line 1, in 
+StopIteration: 42
+>>> 
+Generators can not only send objects but also receive objects. 
+We had to call next on the generator first, because the generator needed to be started. Using send to a generator which hasn't been started leads to an exception:
+Here it throws error. Because the generator is not started yet.
+>>> cr = simple_coroutine()
+>>> cr.send("Hi")
+Traceback (most recent call last):
+  File "", line 1, in 
+TypeError: can't send non-None value to a just-started generator
+>>> 
+
+
+Range vs xrange :
+Xrange object creates lazily,so it is generators.
+Xrange is defined as range in python 3.
+Exception handling : -
+while True:
+    try:
+        n = input("Please enter an integer: ")
+        n = int(n)
+        break
+    except ValueError:
+        print("No valid integer! Please try again ...")
+print("Great, you successfully entered an integer!")
+
+Custom made exception:-
+class MyException(Exception):
+    pass
+
+raise MyException("An exception doesn't always prove the rule!")
+Clean up actions:-
+try:
+    x = float(input("Your number: "))
+    inverse = 1.0 / x
+finally:
+    print("There may or may not have been an exception.")
+print("The inverse: ", inverse)
+
+try:
+    x = float(input("Your number: "))
+    inverse = 1.0 / x
+except ValueError:
+    print("You should have given either an int or a float")
+except ZeroDivisionError:
+    print("Infinity")
+finally:
+    print("There may or may not have been an exception.")
+
+else clause: -
+import sys
+file_name = sys.argv[1]
+text = []
+try:
+    fh = open(file_name, 'r')
+except IOError:
+    print('cannot open', file_name)
+else:
+    text = fh.readlines()
+    fh.close()
+
+Python Test:-
+
+Method	Meaning
+setUp()	Hook method for setting up the test fixture before exercising it. This method is called before calling the implemented test methods.
+tearDown()	Hook method for deconstructing the class fixture after running all tests in the class.
+assertEqual(self, first, second, msg=None)	The test fails if the two objects are not equal as determined by the '==' operator.
+assertAlmostEqual(self, first, second, places=None, msg=None, delta=None)	The test fails if the two objects are unequal as determined by their difference rounded to the given number of decimal places (default 7) and comparing to zero, or by comparing that the between the two objects is more than the given delta. 
+Note that decimal places (from zero) are usually not the same as significant digits (measured from the most significant digit). 
+If the two objects compare equal then they will automatically compare almost equal.
+assertCountEqual(self, first, second, msg=None)	An unordered sequence comparison asserting that the same elements, regardless of order. If the same element occurs more than once, it verifies that the elements occur the same number of times. 
+self.assertEqual(Counter(list(first)), Counter(list(second))) 
+Example: 
+[0, 1, 1] and [1, 0, 1] compare equal, because the number of ones and zeroes are the same. 
+[0, 0, 1] and [0, 1] compare unequal, because zero appears twice in the first list and only once in the second list. 
+assertDictEqual(self, d1, d2, msg=None)	Both arguments are taken as dictionaries and they are checked if they are equal.
+assertTrue(self, expr, msg=None)	Checks if the expression "expr" is True.
+assertGreater(self, a, b, msg=None)	Checks, if a > b is True.
+assertGreaterEqual(self, a, b, msg=None)	Checks if a ≥ b
+assertFalse(self, expr, msg=None)	Checks if expression "expr" is False.
+assertLess(self, a, b, msg=None)	Checks if a < b
+assertLessEqual(self, a, b, msg=None)	Checks if a ≤ b
+assertIn(self, member, container, msg=None)	Checks if a in b
+assertIs(self, expr1, expr2, msg=None)	Checks if "a is b"
+assertIsInstance(self, obj, cls, msg=None)	Checks if isinstance(obj, cls).
+assertIsNone(self, obj, msg=None)	Checks if "obj is None"
+assertIsNot(self, expr1, expr2, msg=None)	Checks if "a is not b"
+assertIsNotNone(self, obj, msg=None)	Checks if obj is not equal to None
+assertListEqual(self, list1, list2, msg=None)	Lists are checked for equality.
+assertMultiLineEqual(self, first, second, msg=None)	Assert that two multi-line strings are equal.q
+assertNotRegexpMatches(self, text, unexpected_regexp, msg=None)	Fails, if the text Text "text" of the regular expression unexpected_regexp matches.
+assertTupleEqual(self, tuple1, tuple2, msg=None)	Analogous to assertListEqual
+
+Web scrapping: -
+Web Scrapping is a way of extracting the large amounts of information which is available on the web sites and saving it onto the local machine or onto the database tables.
+Modules used are
+ BeautifulSoup and Urllib2
+#import the library used to query a website
+import urllib2
+#specify the url
+wiki = "https://en.wikipedia.org/wiki/List_of_state_and_union_territory_capitals_in_India"
+#Query the website and return the html to the variable 'page'
+page = urllib2.urlopen(wiki)
+
+OS module:-
+Interact with operating system
+Create,delete folders, current working directory  etc.
+Import os.
+Curdir = os.getcwd()
+Os.mkdir()
+Os.rmdir.
+OrderedDict in Python
+An OrderedDict is a dictionary subclass that remembers the order that keys were first inserted. The only difference between dict() and OrderedDict() is that:
+OrderedDict preserves the order in which the keys are inserted. A regular dict doesn’t track the insertion order, and iterating it gives the values in an arbitrary order. By contrast, the order the items are inserted is remembered by OrderedDict.
+# A Python program to demonstrate working of OrderedDict
+from collections import OrderedDict
+ 
+print("This is a Dict:\n")
+d = {}
+d['a'] = 1
+d['b'] = 2
+d['c'] = 3
+d['d'] = 4
+ 
+for key, value in d.items():
+    print(key, value)
+ 
+print("\nThis is an Ordered Dict:\n")
+od = OrderedDict()
+od['a'] = 1
+od['b'] = 2
+od['c'] = 3
+od['d'] = 4
+ 
+for key, value in od.items():
+    print(key, value)
+
+Output:
+This is a Dict:
+('a', 1)
+('c', 3)
+('b', 2)
+('d', 4)
+
+This is an Ordered Dict:
+('a', 1)
+('b', 2)
+('c', 3)
+('d', 4)
+Enumeration in python:
+Using enumerate () function you can iterate through the sequence and retrieve the index position and its corresponding value at the same time.
+>>> for i,v in enumerate([‘Python’,’Java’,’C++’]):
+print(i,v)
+0 Python
+1 Java
+2 C++
+>>> elements = ('foo', 'bar', 'baz')
+>>> for elem in elements:
+...     print elem
+... 
+foo
+bar
+baz
+>>> for count, elem in enumerate(elements):
+...     print count, elem
+... 
+0 foo
+1 bar
+2 baz
+By default enumerate starts with 0.
+>>> for count, elem in enumerate(elements, 42):
+...     print count, elem
+... 
+42 foo
+43 bar
+44 baz
+Return value from reversed ()
+The reversed () method returns an iterator that accesses the given sequence in the reverse order.
+seqString = 'Python'
+print(list(reversed(seqString)))
+output: ['n', 'o', 'h', 't', 'y', 'P']
+Magic Method:-
+__new__
+__Init__
+__del__
+__new__ is the first method to get called in an object's instantiation. 
+__init__ method is the initializer for the class. It gets passed whatever the primary constructor was called with (so, for example, if we called x = SomeClass(10, 'foo'), __init__ would get passed 10 and 'foo' as arguments. __init__ is almost universally used in Python class definitions.
+
+If __new__ and __init__ formed the constructor of the object, __del__ is the destructor
+PY vs PYC files:-
+Both .py and .pyc files holds the byte code. “.pyc” is a compiled version of Python file. This file is automatically generated by Python to improve performance. The .pyc file is having byte code which is platform independent and can be executed on any operating system that supports .pyc format.
+Note: there is no difference in speed when program is read from .pyc or .py file; the only difference is the load time.
+check the file existence and their types in Python:
+os.path.exists() – use this method to check for the existence of a file. It returns True if the file exists, false otherwise. Eg: import os; os.path.exists(‘/etc/hosts’)
+os.path.isfile() – this method is used to check whether the give path references a file or not. It returns True if the path references to a file, else it returns false. Eg: import os; os.path.isfile(‘/etc/hosts’)
+os.path.isdir() – this method is used to check whether the give path references a directory or not. It returns True if the path references to a directory, else it returns false. Eg: import os; os.path.isfile(‘/etc/hosts’)
+os.path.getsize() – returns the size of the given file
+os.path.getmtime() – returns the timestamp of the given path.
+
+Memory Management:
+Python memory is managed by Python private heap space. All Python objects and data structures are located in a private heap. The programmer does not have an access to this private heap and interpreter takes care of this Python private heap. 
+The allocation of Python heap space for Python objects is done by Python memory manager. The core API gives access to some tools for the programmer to code.
+Python also have an inbuilt garbage collector, which recycle all the unused memory and frees the memory and makes it available to the heap space.
+generate random numbers:-
+import random
+random.randint(2,100)
+
+The statement random.random() method return the floating point number that is in the range of [0, 1). The function generates the random float numbers. The methods that are used with the random class are the bound methods of the hidden instances. The instances of the Random can be done to show the multi-threading programs that creates different instance of individual threads. The other random generators that are used in this are:
+randrange(a, b): it chooses an integer and define the range in-between [a, b). It returns the elements by selecting it randomly from the range that is specified. It doesn’t build a range object.
+uniform(a, b): it chooses a floating point number that is defined in the range of [a,b).Iyt returns the floating point number
+normalvariate(mean, sdev): it is used for the normal distribution where the mu is a mean and the sdev is a sigma that is used for standard deviation.
+The Random class that is used and instantiated creates an independent multiple random number generators.
+Monkey Patching:-
+Garbage collection: -
