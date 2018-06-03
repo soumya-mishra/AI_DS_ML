@@ -1,0 +1,149 @@
+Introduction:-
+
+- ML gives computers the ability to learn without being explicitly programmed.
+
+- Explores the study and construction of algorithms that can learn from data and make predictions on data.
+
+- According to Tom Mitchell A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E.
+
+- In simplified version P directly proportional to E with T as constant. So P = TE.
+
+- Types of ML tasks based on feedback available to Learning system
+
+      1.Supervised Learning
+
+      2. Unsupervised Learning
+
+      3.Reinforcement Learning
+
+- Types of ML tasks based on output of a Learning system.
+
+   1.Classification
+
+   2 .Regression
+
+   3.Clustering(Density estimation, Dimensionality Reduction)
+
+- ML is about learning some properties of a data set and applying them to new data.
+
+- Common practice in machine learning to evaluate an algorithm is to split the data at hand into three sets,
+
+- Training set
+
+- Validation set
+
+- Testing set
+
+- But sometimes only two sets(training and testing) also can be used
+
+Loading an example data set in scikit-learn:-
+
+-  Scikit-learn comes with a few standard datasets, for instance the iris and digits datasets for classification and the Boston house price dataset  for regression.
+
+- Python code to load iris dataset.
+
+from sklearn import datasets
+
+iris = datasets.load_iris()
+
+digits = datasets.load_digits()
+
+- This data is stored as n_samples ,n_features array.
+
+- digits.data and iris.data holds the features that and called as independent variable.
+
+- digits.target and iris.target  holds dependent variables.
+
+Data Preprocessing:-
+
+- Before building any model, standardization of dataset is needed.
+
+- Results behave badly if the individual features do not more or less look like standard normally distributed data.
+
+- If a feature has a variance or orders of magnitude larger than others, it might dominate during the prediction  and make the estimator unable to learn from other features correctly as expected
+
+- we have many techniques to preprocess the dataset based on the algorithm, requirement and data.
+
+     1. Standardization by mean removal and variance scaling
+
+          - Zero Mean and Unit variance
+
+Code Snippet:-
+
+from sklearn import preprocessing //Preprocessing is the library
+import numpy as np
+X = np.array([[ 1., -1.,  2.],
+                      [ 2.,  0.,  0.],
+                      [ 0.,  1., -1.]])
+X_scaled = preprocessing.scale(X)
+
+- Now if you check the mean of X_scaled it will be array of Zeros
+
+and standard deviation will be array of Ones.
+
+- Below are the notation how you should check.
+
+X_scaled.mean(axis=0)
+X_scaled.std(axis=0)
+
+ 2.Scaling Features to a Range.
+
+     a.MinMaxScaler
+
+      - scales the data lies within the range [0, 1]
+
+    X_std = (X - X.min(axis=0)) / (X.max(axis=0) - X.min(axis=0))
+
+   X_scaled = X_std * (max - min) + min
+
+    b.MaxAbsScaler
+
+       - scales data lies within the range [-1, 1]
+
+3. Normalization.
+
+- Is the process of scaling the features to have unit norm
+
+- Two type, L1 and L2 Normalization
+
+- L2 Normalization to scale the vector to have a unit norm. “Unit norm” essentially means that
+
+if we squared each element in the vector, and summed them, it would equal 1.
+
+- L1 is  basically minimizing the sum of the absolute differences (S) between the target value (Yi) and the estimated values (f(xi)):
+
+-   S =  ∑ (Y¡- F(X¡))
+
+- L2 is least squares error (LSE). It is basically minimizing the sum of the square of the differences (S) between the target value (Yi) and the estimated values (f(xi):
+
+-  S = ∑ (Y¡- F(X¡))²
+
+-  X_normalized = preprocessing.normalize(X, norm='l2')
+
+4. Encoding Categorical Feature.
+
+- Features which does not have continuous value are categorical feature.
+
+- Example ["son", "daughter"], ["from Bangalore", "from India", "from Asia"]
+
+- The process we use is OneHotEncoder and LabelEncoder.
+
+- Example :-
+
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+labelencoder_X = LabelEncoder()
+X[:, 0] = labelencoder_X.fit_transform(X[:, 0])
+onehotencoder = OneHotEncoder(categorical_features = [0])
+X = onehotencoder.fit_transform(X).toarray()
+
+5.Imputation of Missing values
+
+- Many datasets contain missing value or blank values.
+
+- Through Imputation we can handle those missing values.
+
+Example: from sklearn.preprocessing import Imputer
+imputer = Imputer(missing_values = 'NaN', strategy = 'mean', axis = 0)
+imputer = imputer.fit(X[:, 1:3])
+X[:, 1:3] = imputer.transform(X[:, 1:3])
+
