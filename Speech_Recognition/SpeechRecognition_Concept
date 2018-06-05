@@ -1,0 +1,72 @@
+How Speech Recognition works?
+
+The first component of speech recognition is, of course, speech. 
+Speech must be converted from physical sound to an electrical signal with a microphone,
+and then to digital data with an analog-to-digital converter.
+Once digitized, several models can be used to transcribe the audio to text.
+
+modern speech recognition systems rely on what is known as a Hidden Markov Model
+
+This approach works on the assumption that a speech signal, when viewed on a short enough timescale (say, ten milliseconds), 
+can be reasonably approximated as a stationary process—that is,
+a process in which statistical properties do not change over time.
+
+In a typical HMM, the speech signal is divided into 10-millisecond fragments. 
+The power spectrum of each fragment, which is essentially a plot of the signal’s power as a function of frequency,
+is mapped to a vector of real numbers known as cepstral coefficients. 
+The dimension of this vector is usually small—sometimes as low as 10, 
+although more accurate systems may have dimension 32 or more.
+The final output of the HMM is a sequence of these vectors.
+
+To decode the speech into text, groups of vectors are matched to one or more PHONEMES—a fundamental unit of speech.
+This calculation requires training, since the sound of a phoneme varies from speaker to speaker, and even varies from one utterance to another by the same speaker. 
+A special algorithm is then applied to determine the most likely word (or words) that produce the given sequence of phonemes.
+
+In many modern speech recognition systems, neural networks are used to simplify the speech signal using techniques for feature transformation and dimensionality reduction before HMM recognition.
+Voice activity detectors (VADs) are also used to reduce an audio signal to only the portions that are likely to contain speech.
+This prevents the recognizer from wasting time analyzing unnecessary parts of the signal.
+
+Various Python Speech Recognition packages:-
+1. apiai
+2. assemblyai
+3. google-cloud-speech
+4. pocketsphinx
+5. SpeechRecognition
+6. watson-developer-cloud
+7. wit
+
+SpeechRecognition is easy to use .
+The SpeechRecognition library acts as a wrapper for several popular speech APIs and is thus extremely flexible.
+One of these—the Google Web Speech API—supports a default API key that is hard-coded into the SpeechRecognition library.
+That means you can get off your feet without having to sign up for a service.
+
+Install SpeechRecognition:-
+pip install SpeechRecognition
+
+Install PyAudio for receving the voice through microphone
+pip install PyAudio
+
+Recognizer class is the main class where all operation happenes
+It Recognizes the speech
+
+Each Recognizer instance has seven methods for recognizing speech from an audio source using various APIs.
+These are:-
+
+recognize_bing(): Microsoft Bing Speech
+recognize_google(): Google Web Speech API
+recognize_google_cloud(): Google Cloud Speech - requires installation of the google-cloud-speech package
+recognize_houndify(): Houndify by SoundHound
+recognize_ibm(): IBM Speech to Text
+recognize_sphinx(): CMU Sphinx - requires installing PocketSphinx
+recognize_wit(): Wit.ai
+
+only recognize_sphinx() works offline with the CMU Sphinx engine.
+The other six all require an internet connection.
+
+SpeechRecognition ships with a default API key for the Google Web Speech API
+other six APIs all require authentication with either an API key or a username/password combination
+
+All seven recognize_*() methods of the Recognizer class require an audio_data argument.
+In each case, audio_data must be an instance of SpeechRecognition’s AudioData class.
+
+r.recognize_google(audio)
