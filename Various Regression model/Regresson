@@ -1,0 +1,73 @@
+1. Linear Regression
+#####################
+It is represented by an equation Y=a+b*X + e, where a is intercept, b is slope of the line and e is error term. 
+This equation can be used to predict the value of target variable based on given predictor variable(s).
+
+How to obtain best fit line (Value of a and b)?
+##############
+This task can be easily accomplished by Least Square Method.\
+It calculates the best-fit line for the observed data by minimizing the sum of the squares
+of the vertical deviations from each data point to the line. 
+
+We can evaluate the model performance using the metric R-square.
+There must be linear relationship between independent and dependent variables
+Multiple regression suffers from multicollinearity, autocorrelation, heteroskedasticity.
+Linear Regression is very sensitive to Outliers.
+In case of multiple independent variables, we can go with
+forward selection, backward elimination and
+step wise approach for selection of most significant independent variables
+
+2. Logistic Regression
+########################
+Logistic regression is used to find the probability of event=Success and event=Failure.
+It is widely used for classification problems
+It requires large sample sizes because maximum likelihood estimates are less powerful at low sample sizes than ordinary least square
+The independent variables should not be correlated with each other i.e. no multi collinearity
+
+3. Polynomial Regression
+###########################
+y=a+b*x^2
+While there might be a temptation to fit a higher degree polynomial to get lower error, this can result in over-fitting
+
+4.Ridge Regression
+#####################
+Ridge Regression is a technique used when the data suffers from multicollinearity 
+( independent variables are highly correlated).
+In multicollinearity, even though the least squares estimates (OLS) are unbiased, 
+their variances are large which deviates the observed value far from the true value.
+By adding a degree of bias to the regression estimates, ridge regression reduces the standard errors.
+
+This equation also has an error term. The complete equation becomes:
+y=a+b*x+e (error term),  [error term is the value needed to correct for a prediction error between the observed and predicted value]
+Ridge regression solves the multicollinearity problem through shrinkage parameter λ (lambda)
+
+argmin|y-Xβ|^2 + λ|β|^2  = Loss + Penalty
+
+In this equation, we have two components. First one is least square term and other one is lambda of the summation of
+β2 (beta- square) where β is the coefficient.
+
+This is a regularization method and uses l2 regularization.
+
+5.Lasso Regression
+######################
+Lasso (Least Absolute Shrinkage and Selection Operator) also penalizes the absolute size of the regression coefficients
+
+argmin|y-Xβ|^2 + λ|β|
+
+Lasso regression differs from ridge regression in a way that it uses absolute values
+in the penalty function, instead of squares.
+Larger the penalty applied, further the estimates get shrunk towards absolute zero
+
+This is a regularization method and uses l1 regularization
+
+6. ElasticNet Regression
+###########################
+ElasticNet is hybrid of Lasso and Ridge Regression techniques
+It is trained with L1 and L2 prior as regularizer
+Elastic-net is useful when there are multiple features which are correlated.
+Lasso is likely to pick one of these at random, while elastic-net is likely to pick both.
+
+A practical advantage of trading-off between Lasso and Ridge is that, it allows Elastic-Net to inherit 
+some of Ridge’s stability under rotation.
+argmin|y-Xβ|^2 + λ|β|^2 + λ|β|
+
