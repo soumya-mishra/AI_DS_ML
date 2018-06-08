@@ -38,9 +38,9 @@ def myCommand():
 def assistant(command):
     "if statements for executing commands"
 
-    if 'open reddit' in command:
-        reg_ex = re.search('open reddit (.*)', command)
-        url = 'https://www.reddit.com/'
+    if 'open google' in command:
+        reg_ex = re.search('open google (.*)', command)
+        url = 'https://www.google.com/'
         if reg_ex:
             subreddit = reg_ex.group(1)
             url = url + 'r/' + subreddit
@@ -48,13 +48,17 @@ def assistant(command):
         print('Done!')
         
     elif 'what\'s up' in command:
-        talkToMe('Just doing my thing')  
+        talkToMe('Just doing my thing')
+    
+    elif 'open outllok' in command:
+        os.startfile('C:/ProgramData/Microsoft/Windows/Start Menu/Programs/Outlook 2016')
+              
     
     elif 'email' in command:
         talkToMe('Who is the recipient?')
         recipient = myCommand()
 
-        if 'Swati' in recipient:
+        if 'Soumya' in recipient:
             talkToMe('What should I say?')
             content = myCommand()
 
@@ -71,7 +75,7 @@ def assistant(command):
             mail.login('username', 'password')
 
             #send message
-            mail.sendmail('John Fisher', 'JARVIS2.0@protonmail.com', content)
+            mail.sendmail('Soumya', 'soumyaiter@gmail.com', content)
 
             #end mail connection
             mail.close()
