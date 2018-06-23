@@ -1,0 +1,27 @@
+Deep Belief Networks and Deep Boltzmann Machines.
+-The "deep" in "deep learning" refers to the number of layers through which the data is transformed.
+
+Long short-term memory (LSTM) 
+
+Artificial neural networks are computational models which work similar to the functioning of a human nervous system
+
+Types of ANN:-
+
+Feedforwrd Neural N/w
+	The feedforward neural network was the first and simplest type. In this network the information moves only from the input layer directly through any hidden layers to the output layer without cycles/loops. 
+
+Autoencoder
+	is similar to the multilayer perceptron (MLP) ,
+	with an input layer, an output layer and one or more hidden layers connecting them
+	the output layer has the same number of units as the input layer
+	Its purpose is to reconstruct its own inputs.
+	Therefore, autoencoders are unsupervised learning models. 
+	An autoencoder is used for unsupervised learning of efficient codings,
+	typically for the purpose of dimensionality reduction and for learning generative models of data.
+	
+	
+Convoltion Neural Network:-
+
+Recurrent Neural Network:-
+	Recurrent neural networks (RNNs) propagate data forward, but also backwards, from later processing stages to earlier stages. RNNs can be used as general sequence processors.
+	
