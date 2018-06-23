@@ -25,3 +25,7 @@ Convoltion Neural Network:-
 Recurrent Neural Network:-
 	Recurrent neural networks (RNNs) propagate data forward, but also backwards, from later processing stages to earlier stages. RNNs can be used as general sequence processors.
 	
+
+{Input Layer -> Activation function }+ {Hidden Layer -> activation function} + { output Layer-> Activation function} 
+
++ {Compile Model -> Loss function} = Neural Network.
