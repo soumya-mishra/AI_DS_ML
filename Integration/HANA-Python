@@ -1,3 +1,4 @@
+#Connect Python to Hana DB
 import pyhdb
 connection = pyhdb.connect("URL",30215,"UserID","Password")
 cursor = connection.cursor()
