@@ -23,3 +23,4 @@ Machine Learning in Python
 * [Overfitting](https://github.com/soumya-mishra/Python-ML/blob/master/Method%20to%20avoid%20Overfitting)
 * [Plotly](https://github.com/soumya-mishra/Python-ML/blob/master/Plotly_demo.ipynb)
 * [Python_IMP_Concept](https://github.com/soumya-mishra/Python-ML/blob/master/Python_IMP_Concept)
+* [Dask Anaconda](https://github.com/soumya-mishra/Python-ML/blob/master/daskcheatsheet.pdf)
