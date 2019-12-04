@@ -24,3 +24,4 @@ Machine Learning in Python
 * [Plotly](https://github.com/soumya-mishra/Python-ML/blob/master/Plotly_demo.ipynb)
 * [Python_IMP_Concept](https://github.com/soumya-mishra/Python-ML/blob/master/Python_IMP_Concept)
 * [Dask Anaconda](https://github.com/soumya-mishra/Python-ML/blob/master/daskcheatsheet.pdf)
+* [Time Series](https://github.com/soumya-mishra/Python-ML/blob/master/TimeSeries.ipynb)
