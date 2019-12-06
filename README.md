@@ -25,3 +25,4 @@ Machine Learning in Python
 * [Python_IMP_Concept](https://github.com/soumya-mishra/Python-ML/blob/master/Python_IMP_Concept)
 * [Dask Anaconda](https://github.com/soumya-mishra/Python-ML/blob/master/daskcheatsheet.pdf)
 * [Time Series](https://github.com/soumya-mishra/Python-ML/blob/master/TimeSeries.ipynb)
+* [Vaex Documentation](https://github.com/soumya-mishra/Python-ML/blob/master/vaex-latest.pdf)
