@@ -12,11 +12,11 @@ X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 3].values
 
 #Loading Iris datasets
-"""from sklearn import datasets
-iris = datasets.load_iris()
-digits = datasets.load_digits()
-print(digits.data)
-print(digits.target)"""
+# """from sklearn import datasets
+# iris = datasets.load_iris()
+# digits = datasets.load_digits()
+# print(digits.data)
+# print(digits.target)"""
 
 
 # Taking care of missing data
