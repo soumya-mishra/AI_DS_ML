@@ -27,4 +27,4 @@ Machine Learning in Python
 * [Dask Anaconda](https://github.com/soumya-mishra/Python-ML/blob/master/daskcheatsheet.pdf)
 * [Time Series](https://github.com/soumya-mishra/Python-ML/blob/master/TimeSeries.ipynb)
 * [Vaex Documentation](https://github.com/soumya-mishra/Python-ML/blob/master/vaex-latest.pdf)
-*
+* [Autoencoder](https://github.com/soumya-mishra/Python-ML/blob/master/Autoencoder.ipynb)
