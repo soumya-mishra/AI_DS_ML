@@ -28,3 +28,4 @@ Machine Learning in Python
 * [Time Series](https://github.com/soumya-mishra/Python-ML/blob/master/TimeSeries.ipynb)
 * [Vaex Documentation](https://github.com/soumya-mishra/Python-ML/blob/master/vaex-latest.pdf)
 * [Autoencoder](https://github.com/soumya-mishra/Python-ML/blob/master/Autoencoder.ipynb)
+* [OCR with Tesseract](https://github.com/soumya-mishra/Python-ML/blob/master/OCR%20with%20tesseract.ipynb)
