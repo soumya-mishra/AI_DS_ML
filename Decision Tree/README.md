@@ -14,3 +14,5 @@
      then the Gini Impurity is calculated as submation [p(i)∗(1−p(i))]
 * Information Gain -is based on the concept of entropy and information content from information theory.
 * How can we quantify the quality of a split? describes I G
+* this is test file
+* this 2nd test file 
