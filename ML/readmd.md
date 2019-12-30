@@ -7,6 +7,7 @@
   * BayesianGaussianMixture
   * The Dirichlet Process
 * Manifold Learning
+non-linear dimensionality reduction.
   * Isomap
   * Locally Linear Embedding
   * Spactral Embedding
