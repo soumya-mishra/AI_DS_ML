@@ -49,6 +49,11 @@
 * Biclustering
    * Spectral Co-clustering
    * Spectral Bi clustering
- 
+* Decomposing Signals
+   * PCA
+   * Truncated SVD  
+   * Factor Analysis
+   * ICA
+* 
     
   
