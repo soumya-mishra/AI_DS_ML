@@ -46,6 +46,9 @@
     * Silhouette Coefficient
     * Calinski-Harabasz Index
     * Contingency Matrix
-    
+* Biclustering
+   * Spectral Co-clustering
+   * Spectral Bi clustering
+ 
     
   
