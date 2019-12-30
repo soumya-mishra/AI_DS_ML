@@ -1,4 +1,4 @@
-* Unsupervised Learning
+** Unsupervised Learning
 * Gaussian Mixture Model
   * GaussianMixture 
     * probabilistic model
