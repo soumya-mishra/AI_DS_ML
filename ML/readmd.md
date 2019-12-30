@@ -7,8 +7,11 @@
   * BayesianGaussianMixture
   * The Dirichlet Process
 * Manifold Learning
-non-linear dimensionality reduction.
-  * Isomap
+  * non-linear dimensionality reduction.
+    * Isomap
+      * Nearest neighbor search
+      * Shortest-path graph search
+      * Partial eigenvalue decomposition
   * Locally Linear Embedding
   * Spactral Embedding
   * MDS(Multi Dimensional Scaling)
