@@ -22,4 +22,30 @@
     * t-SNE
       * t-SNE is computationally expensive, and can take several hours on million-sample datasets where 
         PCA will finish in seconds or minutes
+* Clustering 
+  * K-Means
+    * referred to as Lloyd’s algorithm
+    * choose centroids that minimise the inertia
+    * Voronoi diagrams.
+    * Mini Batch K-Means
+    
+  * Affinity Propagation
+  * Mean Shift
+  * Spectral Clustering
+  * Heirarchical clustering
+  * DBSCAN
+  * Optics
+  * Bircch
+  * Performance Evaluation 
+    * Adjusted Rand index
+    * Mutual Information
+    * homogeneity_score
+    * completeness_score
+    * V-measure
+    * Fowlkes-Mallows scores
+    * Silhouette Coefficient
+    * Calinski-Harabasz Index
+    * Contingency Matrix
+    
+    
   
