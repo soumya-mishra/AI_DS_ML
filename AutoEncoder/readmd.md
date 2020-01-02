@@ -74,4 +74,4 @@ Application of AE:-
 	* generally anomaly is small error in. so genric model can not capture small variation
 * Image processing 	
 		
- 
+ Examaple Code: [Autoencoder](https://github.com/soumya-mishra/Python-ML/blob/master/Autoencoder.ipynb)
