@@ -1,0 +1,10 @@
+* !ls
+* !pwd
+* !echo "printing from the shell"
+* contents = !ls  | print(contents)
+* directory = !pwd | print(directory)
+* type(directory)
+* message = "hello from Python" | !echo {message}
+* !cd ..
+* %cd ..
+
