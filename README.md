@@ -30,3 +30,4 @@ Machine Learning in Python
 * [Autoencoder](https://github.com/soumya-mishra/Python-ML/blob/master/Autoencoder.ipynb)
 * [OCR with Tesseract](https://github.com/soumya-mishra/Python-ML/blob/master/OCR%20with%20tesseract.ipynb)
 * [Deploy Tensorflow](https://github.com/soumya-mishra/Python-ML/tree/master/Tensorflow)
+* [Bert Keras Deployment](https://github.com/soumya-mishra/Python-ML/blob/master/Project/bert_keras.ipynb)
