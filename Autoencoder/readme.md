@@ -1,36 +1,36 @@
 AutoEncoder:- Unsupervised learning | Does not need label
 ------------------
-Dimensioanlity reduction by ignoring the noise.
+* Dimensioanlity reduction by ignoring the noise.
 +
-Reconstruction is learn , generate the output close to input
+* Reconstruction is learn , generate the output close to input
 
-Variational encoder
+* Variational encoder
 
-2 components:
-1.an encoder that maps the input into the code, 
-2.and a decoder that maps the code to a reconstruction of the original input.
+    * 2 components:
+    * 1.an encoder that maps the input into the code, 
+    * 2.and a decoder that maps the code to a reconstruction of the original input.
 
-input layer--> Code -->Output layer
+* input layer--> Code -->Output layer
 
-encoder = input + code
-decoder = code + output
+* encoder = input + code
+* decoder = code + output
 
-application  - Generative model
+* application  - Generative model
 
-code |Latent Variable|
+* code |Latent Variable|
 
-h= activation function (W*x+b)
-h = hidden layer
- W = weight
- x = input
- b= bias
+* h= activation function (W*x+b)
+   * h = hidden layer
+   * W = weight
+   * x = input
+   * b= bias
  
- weights and biases are intilized randomly and updated iteratively during back propagation
+* weights and biases are intilized randomly and updated iteratively during back propagation
  
- decoded stage of autoencoder maps   h 
- x' is same shape as x
+* decoded stage of autoencoder maps   h 
+*  x' is same shape as x
   
- x' = Another Activation function (W'*h +b')
+*  x' = Another Activation function (W'*h +b')
  
  loss can be calculated as  L(x,x') = ||x - x'||^2
  This is squared error
