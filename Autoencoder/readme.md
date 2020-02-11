@@ -1,5 +1,5 @@
 AutoEncoder:- Unsupervised learning | Does not need label
-------------------
+-----------------------------------------------------
 * Dimensioanlity reduction by ignoring the noise.
 
 * Reconstruction is learn , generate the output close to input
