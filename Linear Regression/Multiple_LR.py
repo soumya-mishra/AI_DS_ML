@@ -5,6 +5,7 @@
 #4.Bidirectional Ellimination
 #5.Score comparision
 
+
 # Multiple Linear Regression
 #Include dummy variable total-1 
 #Dummy variable works on categorical feature
