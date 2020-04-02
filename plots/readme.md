@@ -10,18 +10,18 @@ Summary:
 -------------------
 4.visualizing linear relationship
 --------------------
-1.Visualizing statistical relationship:
+### Visualizing statistical relationship:
 replot : scatter |line plots   : kind = scatter|line
 sns.set(style="darkgrid")
 replot : x = , y=,  hue = , data =  , style =     (all are column name except data)
    ci: confidence interval CI
    ci = SD ( spread of distribution )
    
-2.Plotting with categorical data
+### Plotting with categorical data
 catplot  : x = ,y =, data =  ,kind =  ,hue = ,
 stripplot 
 swarmplot
-categorical distribution plot : boxplot 
+### categorical distribution plot : boxplot 
 violinplot  -  box plot + Kernel density estimation 
 boxenplot   - for large data
 Categorical estimate plots:
