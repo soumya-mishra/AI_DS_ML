@@ -1,11 +1,12 @@
-**Seaborn:
-
-***Summary:
+Seaborn:
+----------
+Summary:
+---------
 1.Visualizing statistical relship
 2.Plotting with categorical data
 3.visualizing the distribution of dataset
 4.visualizing linear relationship
- 
+----------------------------------
 1.Visualizing statistical relationship:
 replot : scatter |line plots   : kind = scatter|line
 sns.set(style="darkgrid")
