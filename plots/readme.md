@@ -1,5 +1,5 @@
-###Seaborn:
-####Summary:
+**Seaborn:
+***Summary:
 1.Visualizing statistical relship
 2.Plotting with categorical data
 3.visualizing the distribution of dataset
