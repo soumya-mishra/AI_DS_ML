@@ -2,19 +2,20 @@ Seaborn:
 ----------
 Summary:
 ---------
-1.Visualizing statistical relship
+1.Visualizing statistical relationship
+------------
 2.Plotting with categorical data
+-----------------
 3.visualizing the distribution of dataset
+-------------------
 4.visualizing linear relationship
-----------------------------------
+--------------------
 1.Visualizing statistical relationship:
 replot : scatter |line plots   : kind = scatter|line
 sns.set(style="darkgrid")
 replot : x = , y=,  hue = , data =  , style =     (all are column name except data)
    ci: confidence interval CI
    ci = SD ( spread of distribution )
-   
-   
    
 2.Plotting with categorical data
 catplot  : x = ,y =, data =  ,kind =  ,hue = ,
