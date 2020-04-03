@@ -43,25 +43,25 @@ Variational encoder
  
  Types of Autoencoder:-
  -----------------------------
- 1.Sparce Autoencoder :
- =======================
+ ### 1.Sparce Autoencoder :
+
 	sparicity improves performance
 	small no of hidden unit are allowed active at once
 	sparcity activation can be acieved by 
 		- Kullback - Elibler divergence 
 		- L1 and L2 regurization
 		- 
-2.Denoising autoencoder :DAE
-==============================
+### 2.Denoising autoencoder :DAE
+
 		DAE takes partially corrupted input and trined to recover original distorted input
 		denoising 
 
-3.Contractive Encoder : CAE
-==============================
+### 3.Contractive Encoder : CAE
+
 	adds an explicit regularizer in their objective function so the output 
 	would be slight variation from input
 
-4.Variational AutoEncoder: VAE
+### 4.Variational AutoEncoder: VAE
 	like Genrative Adversial Network
 	generative model
 	directed probabilistic graphical model
@@ -74,14 +74,14 @@ Variational encoder
 	stochastic Gradient Variantional Bayes
 	
 Application of AE:-
-1.Dimensioanlity Reduction
-2.Relation to PCA
+#### 1.Dimensioanlity Reduction
+#### 2.Relation to PCA
 		Linear Activation  + single sigmoid hidden layer behave as PCA
-3 Information retrival
+#### 3 Information retrival
 	 through hashing  
-4.Anomaly Detection 
+#### 4.Anomaly Detection 
 		replicate  most salient features in training data 
 		generally anomaly is small error in. so genric model can not capture small variation
-5. Image processing 	
+#### 5. Image processing 	
 
 
