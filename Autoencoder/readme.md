@@ -7,7 +7,8 @@ AutoEncoder:-
 
 * Reconstruction is learn , generate the output close to input
 
-* Variational encoder
+Variational encoder
+----------------------------
 
     * 2 components:
     * 1.an encoder that maps the input into the code, 
@@ -43,6 +44,7 @@ AutoEncoder:-
  Types of Autoencoder:-
  -----------------------------
  1.Sparce Autoencoder :
+ =======================
 	sparicity improves performance
 	small no of hidden unit are allowed active at once
 	sparcity activation can be acieved by 
@@ -50,10 +52,12 @@ AutoEncoder:-
 		- L1 and L2 regurization
 		- 
 2.Denoising autoencoder :DAE
+==============================
 		DAE takes partially corrupted input and trined to recover original distorted input
 		denoising 
 
 3.Contractive Encoder : CAE
+==============================
 	adds an explicit regularizer in their objective function so the output 
 	would be slight variation from input
 
