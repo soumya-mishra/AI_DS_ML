@@ -1,1 +1,17 @@
-test
+- Word embedding — the mapping of words into numerical vector spaces
+- doc2vec
+- word2vec
+- Classic tecniques
+  - Bag of words
+  - Latent Dirichlet Allocation(LDA)
+- Unsupervised document embedding
+  -  n-gram embeddings
+  - Averaging word embeddings
+  - Sent2Vec
+  - Paragraph vectors (doc2vec)
+  - Doc2VecC
+  - Skip-thought vectors
+  - FastSent
+  - Quick-thought vectors
+  - Word Mover’s Embedding (WME)
+  - Sentence-BERT (SBERT)
