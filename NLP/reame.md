@@ -2,10 +2,12 @@
 - doc2vec
 - word2vec
 - Classic tecniques
-  - Bag of words
+  - Bag of words 
+  - TF&IDF
   - Latent Dirichlet Allocation(LDA)
+    - Topic modelling
 - Unsupervised document embedding
-  -  n-gram embeddings
+  - n-gram embeddings
   - Averaging word embeddings
   - Sent2Vec
   - Paragraph vectors (doc2vec)
@@ -15,3 +17,12 @@
   - Quick-thought vectors
   - Word Mover’s Embedding (WME)
   - Sentence-BERT (SBERT)
+     - Encoder-decoder models
+- Supervised methods
+  - Learning document embeddings from labeled data
+  - Task-specific supervised document embeddings
+  - GPT
+  - Deep Semantic Similarity Model (DSSM)
+  - Jointly learning sentence representations
+  - Universal Sentence Encoder
+  - GenSen
