@@ -1,9 +1,9 @@
-Time Series
-----------------------------------------------
+## Time Series
 Time series is a sequence of observation in equi-spaced  time intervals
 Order and continuity should be mintained.
-Time series Modelling technique:-
-----------------------------------
+
+## Time series Modelling technique:-
+
 1.	Auto Regression(AR)
 2.	Moving Average(MA)
 3.	Auto regressive moving average(ARMA)
