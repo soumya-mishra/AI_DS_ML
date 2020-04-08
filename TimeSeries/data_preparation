@@ -66,8 +66,146 @@ three input time steps and one output time step.
 
 Now that we know how to prepare a univariate series for modeling, 
 let’s look at developing LSTM models that can learn the mapping of inputs to outputs, starting with a Vanilla LSTM.
----------------------------
+---------------------------------------------------------------------------------------------
+-------------------------------------------------------------------
 ## Prepare the Shape of data for LSTM :-
 
 There is also confusion about how to convert your sequence data that may be a 1D or 2D matrix of numbers to 
 the required 3D format of the LSTM input layer.
+
+LSTM Input Layer
+The LSTM input layer is specified by the “input_shape” argument on the first hidden layer of the network.
+
+This can make things confusing for beginners.
+
+For example, below is an example of a network with one hidden LSTM layer and one Dense output layer.
+
+model = Sequential()
+model.add(LSTM(32))
+model.add(Dense(1))
+
+
+In this example, the LSTM() layer must specify the shape of the input.
+
+The input to every LSTM layer must be three-dimensional.
+
+The three dimensions of this input are:
+
+-->Samples. One sequence is one sample. A batch is comprised of one or more samples.
+-->Time Steps. One time step is one point of observation in the sample.
+-->Features. One feature is one observation at a time step.
+This means that the input layer expects a 3D array of data when fitting the model and when making predictions, even if specific dimensions of the array contain a single value, e.g. one sample or one feature.
+
+When defining the input layer of your LSTM network, the network assumes you have 1 or more samples and requires that you specify the number of time steps and the number of features. You can do this by specifying a tuple to the “input_shape” argument.
+
+For example, the model below defines an input layer that expects 1 or more samples, 50 time steps, and 2 features.
+
+model = Sequential()
+model.add(LSTM(32, input_shape=(50, 2)))
+model.add(Dense(1))
+
+Now that we know how to define an LSTM input layer and the expectations of 3D inputs,
+let’s look at some examples of how we can prepare our data for the LSTM.
+
+Example of LSTM With Single Input Sample
+Consider the case where you have one sequence of multiple time steps and one feature.
+
+For example, this could be a sequence of 10 values:
+
+0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0
+
+We can define this sequence of numbers as a NumPy array.
+
+from numpy import array
+data = array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
+We can then use the reshape() function on the NumPy array to reshape this one-dimensional array 
+into a three-dimensional array with 1 sample, 10 time steps, and 1 feature at each time step.
+
+The reshape() function when called on an array takes one argument which is a tuple defining the new shape of the array.
+We cannot pass in any tuple of numbers; the reshape must evenly reorganize the data in the array.
+
+
+data = data.reshape((1, 10, 1))
+Once reshaped, we can print the new shape of the array.
+print(data.shape)
+
+Putting all of this together, the complete example is listed below.
+
+from numpy import array
+data = array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
+data = data.reshape((1, 10, 1))
+print(data.shape)
+Running the example prints the new 3D shape of the single sample.
+
+(1, 10, 1)
+This data is now ready to be used as input (X) to the LSTM with an input_shape of (10, 1).
+
+model = Sequential()
+model.add(LSTM(32, input_shape=(10, 1)))
+model.add(Dense(1))
+
+Example of LSTM with Multiple Input Features
+Consider the case where you have multiple parallel series as input for your model.
+
+For example, this could be two parallel series of 10 values:
+
+series 1: 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0
+series 2: 1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1
+
+We can define these data as a matrix of 2 columns with 10 rows:
+
+from numpy import array
+data = array([
+	[0.1, 1.0],
+	[0.2, 0.9],
+	[0.3, 0.8],
+	[0.4, 0.7],
+	[0.5, 0.6],
+	[0.6, 0.5],
+	[0.7, 0.4],
+	[0.8, 0.3],
+	[0.9, 0.2],
+	[1.0, 0.1]])
+This data can be framed as 1 sample with 10 time steps and 2 features.
+
+It can be reshaped as a 3D array as follows:
+
+data = data.reshape(1, 10, 2)
+
+Putting all of this together, the complete example is listed below.
+
+from numpy import array
+data = array([
+	[0.1, 1.0],
+	[0.2, 0.9],
+	[0.3, 0.8],
+	[0.4, 0.7],
+	[0.5, 0.6],
+	[0.6, 0.5],
+	[0.7, 0.4],
+	[0.8, 0.3],
+	[0.9, 0.2],
+	[1.0, 0.1]])
+data = data.reshape(1, 10, 2)
+
+Running the example prints the new 3D shape of the single sample.
+
+print (data.reshape)
+(1, 10, 2)
+
+This data is now ready to be used as input (X) to the LSTM with an input_shape of (10, 2).
+
+model = Sequential()
+model.add(LSTM(32, input_shape=(10, 2)))
+model.add(Dense(1))
+
+
+This section lists some tips to help you when preparing your input data for LSTMs.
+
+- The LSTM input layer must be 3D.
+- The meaning of the 3 input dimensions are: samples, time steps, and features.
+- The LSTM input layer is defined by the input_shape argument on the first hidden layer.
+- The input_shape argument takes a tuple of two values that define the number of time steps and features.
+- The number of samples is assumed to be 1 or more.
+- The reshape() function on NumPy arrays can be used to reshape your 1D or 2D data to be 3D.
+- The reshape() function takes a tuple as an argument that defines the new shape.
