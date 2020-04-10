@@ -16,3 +16,5 @@
 * How can we quantify the quality of a split? describes I G
 * Entropy -  Entropy can be roughly thought of as how much variance the data has
 * E = pi log2 pi
+
+
