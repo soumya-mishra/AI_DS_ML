@@ -1,45 +1,24 @@
 Introduction:-
-
 - ML gives computers the ability to learn without being explicitly programmed.
-
 - Explores the study and construction of algorithms that can learn from data and make predictions on data.
-
 - According to Tom Mitchell A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E.
-
 - In simplified version P directly proportional to E with T as constant. So P = TE.
-
 - Types of ML tasks based on feedback available to Learning system
-
       1.Supervised Learning
-
       2. Unsupervised Learning
-
       3.Reinforcement Learning
-
 - Types of ML tasks based on output of a Learning system.
-
    1.Classification
-
    2 .Regression
-
    3.Clustering(Density estimation, Dimensionality Reduction)
-
 - ML is about learning some properties of a data set and applying them to new data.
-
 - Common practice in machine learning to evaluate an algorithm is to split the data at hand into three sets,
-
 - Training set
-
 - Validation set
-
 - Testing set
-
 - But sometimes only two sets(training and testing) also can be used
-
 Loading an example data set in scikit-learn:-
-
 -  Scikit-learn comes with a few standard datasets, for instance the iris and digits datasets for classification and the Boston house price dataset  for regression.
-
 - Python code to load iris dataset.
 
 from sklearn import datasets
