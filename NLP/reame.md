@@ -26,3 +26,4 @@
   - Jointly learning sentence representations
   - Universal Sentence Encoder
   - GenSen
+  
