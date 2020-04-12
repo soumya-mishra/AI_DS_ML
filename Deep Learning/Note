@@ -29,3 +29,5 @@ Recurrent Neural Network:-
 {Input Layer -> Activation function }+ {Hidden Layer -> activation function} + { output Layer-> Activation function} 
 
 + {Compile Model -> Loss function} = Neural Network.
+
+
