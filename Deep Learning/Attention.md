@@ -35,8 +35,9 @@ figure -
 ![](attention_img.jfif)
 
 
-alpha<1,1>, alpha<1,2>, and alpha<1,3> are the attention weights being used.
+* alpha<1,1>, alpha<1,2>, and alpha<1,3> are the attention weights being used.
 
+# Context vector
 * to generate any word there will be a set of attention weights that controls which words we are looking at right now.
 * Context vetor C is calculated with attention weights
 * context vector has access to the entire input sequence.
