@@ -44,7 +44,16 @@ figure -
 
 # Note : 
 * Sum of the attention weights for each element in the sequence should be 1:
+# Types of Attention:
+- Content-base attention
+- Additive
+- Location Based 
+- Dot product 
+- Scaled dot product
 
+- Self Attention
+- Global/soft 
+- Local/hard 
 
 
 
