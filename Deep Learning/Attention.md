@@ -8,7 +8,9 @@ The decoder will  take the encoder vector and  process it generate translation
 * This is a flawed method and in a real time scenario you can not wait a long sentence to be finished.
 * So encoder and decoder technique performance decreses when the sentense is long 
 * the perfoemce can be checked with bleu score.
-![](/Bluescore.PNG)
+
+![](Bluescore.PNG)
+
 * But when humans would trnaslate this sentence, they do not read whole sentence and do not memorize it to translate .
  As one Human speaks, the other translates wihtout waiting for the complete sentence to finish
 # Attention in an Image :
