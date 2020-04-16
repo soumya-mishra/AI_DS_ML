@@ -7,7 +7,7 @@ The encoder should memorize the long setnece  into one vector .
 The decoder will  take the encoder vector and  process it generate translation
 * This is a flawed method and in a real time scenario you can not wait a long sentence to be finished.
 * So encoder and decoder technique performance decreses when the sentense is long 
-* the perfoemce can be checked with bleu score.
+* the performance can be checked with bleu score. x-axis is no of words
 
 ![](Bluescore.PNG)
 
