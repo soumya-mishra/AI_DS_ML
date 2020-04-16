@@ -32,6 +32,9 @@ Output should be English language
 
 figure - 
 
+![](attention_img.jfif)
+
+
 alpha<1,1>, alpha<1,2>, and alpha<1,3> are the attention weights being used.
 
 * to generate any word there will be a set of attention weights that controls which words we are looking at right now.
