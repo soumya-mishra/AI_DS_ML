@@ -43,7 +43,20 @@ joint plot in seaborne, Contour plot
 Linear Algebra
 2d - line
 3d - plane , more than 3d it is hyperplane
-Understand distance .
+Understand distance .  root{(x2^2 -x1^2) + (y2^2 - y1^2) + (z2^2 - z1^2)}  - 3D distance 
+if through origine - one point will be zero
+
+Distance:
+Eucledian Distance
+Minkowski distance | 1-norm distance	| 2 norm | n - norm 
+Manhatten distance
+Cosine distance
+Levenshtein distance
+Hamming distance
+
+
+row vector and column vector. Default is column vector 
+
 
 
 
