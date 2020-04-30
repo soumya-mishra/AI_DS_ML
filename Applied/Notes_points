@@ -2,5 +2,16 @@ Exploratory data analysis
 imbalance & Banlanced dataset
 
 2d scatter plot 
-3d Scatter plot | what about 4d 5d - can human visualize - no
+3d Scatter plot | what about 4d 5d - can human visualize ?- no
+1D scaatter plot - can not read( can not see how many points are there for each class)
+
+pair plot  -  seaborne  -  multiple plots for each pair of columns . ignore diagonal element 
+Write observation after plotting 
+more than 10 features - difficult to visualize and takes time
+
+Histograms - PDF , CDF 
+1D scaatter plot - can not read( can not see how many points are there for each class)
+Hence we use Histogram for single feature instead of 1D plot 
+Histogam - y axis says how mnay points exist -  smooth form inside a histogram is PDF (Probability Density function )
+
 
