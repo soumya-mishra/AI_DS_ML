@@ -6,12 +6,47 @@ imbalance & Banlanced dataset
 1D scaatter plot - can not read( can not see how many points are there for each class)
 
 pair plot  -  seaborne  -  multiple plots for each pair of columns . ignore diagonal element 
-Write observation after plotting 
+Write observation after plotting -  simple sentence - numeric value
 more than 10 features - difficult to visualize and takes time
 
-Histograms - PDF , CDF 
+Univriate Analysis:
+Histograms - PDF , CDF , Bins ( Binning )
 1D scaatter plot - can not read( can not see how many points are there for each class)
 Hence we use Histogram for single feature instead of 1D plot 
 Histogam - y axis says how mnay points exist -  smooth form inside a histogram is PDF (Probability Density function )
+CDF - cumulative Density Function ( Remember it is cumulative )
+Imagine PDF and CDF 
+
+Mean | Variance | Standard deviation 
+Median  -  sort the values - and take the middle value ( Even and ODD no careful )
+Median is robust to outliers 
+if more than 50% of values are corrupted or outlier, then median is corrupted.
+1, 1.1 , 1.2, 5, 10,20, 30 
+what is median absolute deviation(MAD)  -  it is robust 
+
+Perctiles: Percentages of points 
+50th percintile say is 50% value is less than that value
+basicallt 50th percitile is median
+10th percintile is 105 value is less than that point. 25th 50th 75th percintiles are called Quartiles.
+
+Box plot:  quartiles plot. 25th - 50th - 75th , Whiskers - shows the outliers
+IQR = Q3 −  Q1
+Q1 − 1.5 IQR or above Q3 + 1.5 IQR  are outliers or whiskers
+
+Violin plot - looks like violine 
+box plot plus Histogram and PDF is Violine plots
+
+Multivariate Probability Density plot :
+joint plot in seaborne, Contour plot 
+
+
+Linear Algebra
+2d - line
+3d - plane , more than 3d it is hyperplane
+Understand distance .
+
+
+
+
 
 
