@@ -54,8 +54,49 @@ Cosine distance
 Levenshtein distance
 Hamming distance
 
-
 row vector and column vector. Default is column vector 
+Projection 
+Unit vector  a/||a||
+
+Equation of a line  - ax+by+c = 0   |  wTX+w0 = 0 | y = mx+c 
+plane = ax+by+cz+w0 = 0
+hyperpalce  w1x1 + w2x2+w3x3+...+wnxn +w0 = 0
+
+passing through origine means  c = 0 ( Y-intercept)
+
+Circle: in 2d - x1 and x2 
+
+x1^2 + x2^2+ ...+ Xn^2 = r^2 
+
+Ellcipse equation: x1..xn
+x^2/a^2 + y^2/b^2 = 1
+-------------------
+Random variable X
+Population, sample
+
+Gaussian Distribution 
+learn the equation 
+68-95-99 rule 
+ 0 1 2 3 sigma( std)
+
+symmetric distribution
+Right skewed left skewed  ;  Kurtosis - peak 
+
+standardize- x-mu/sigma   Z = N(0,1)  means 0 ,  1 std
+
+Kernel Density Estimation :  density of ditribution . 
+
+Sampling distribution : take sample from population  and see 
+
+Central Limit Theorem:  take a random variable X , we do not know the distribution 
+take the samples  at least 30 . Each sample has let say 1000 points.
+callculate the sample mean for each sample
+
+all sample means has a distribution . Draw the distributions. It follows Normal distibutions with same mean( mu) as population
+Variance will be  Variance/n    -  n is no of samples. n = 30 .
+
+
+
 
 
 
