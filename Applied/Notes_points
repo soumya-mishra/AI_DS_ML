@@ -95,6 +95,21 @@ callculate the sample mean for each sample
 all sample means has a distribution . Draw the distributions. It follows Normal distibutions with same mean( mu) as population
 Variance will be  Variance/n    -  n is no of samples. n = 30 .
 
+Q-Q Plot: Quantile Quantile plot
+Is X Gaussin distributes -  Q-Q plots tell us
+KS test, Anderson darling test also tells the sam 
+
+Q-Q plot is graphical method.
+sort them  and compute percentile  
+
+Create radom variable Y whihc is Gaussian distribution.  Compute the percantile
+Plot X -persantile and Y - percantile . If both are straight line - it is Gaussin dist.
+
+data = np.random.normal(loc = 0,scale =1,size=1000) # loc is mean, scale  = variance 
+stas.probblot(data,dist = norm, plot = pylab)
+
+How Distribution are used:
+
 
 
 
