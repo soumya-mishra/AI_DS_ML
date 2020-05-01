@@ -248,11 +248,15 @@ https://builtin.com/data-science/step-step-explanation-principal-component-analy
 3.COMPUTE THE EIGENVECTORS AND EIGENVALUES OF THE COVARIANCE MATRIX TO IDENTIFY THE PRINCIPAL COMPONENTS
 
 principal components:
-So, the idea is 10-dimensional data gives you 10 principal components, but PCA tries to put maximum possible information in the first component, then maximum remaining information in the second and so on.
- principal component accounts for the largest possible variance in the data set
+So, the idea is 10-dimensional data gives you 10 principal components, but PCA tries to put maximum possible
+information in the first component, then maximum remaining information in the second and so on.
+principal component accounts for the largest possible variance in the data set
  
-it is eigenvectors and eigenvalues who are behind all the magic explained above, because the eigenvectors of the Covariance matrix are actually the directions of the axes where there is the most variance(most information).and that we call Principal Components.
-And eigenvalues are simply the coefficients attached to eigenvectors, which give the amount of variance carried in each Principal Component.
+it is eigenvectors and eigenvalues who are behind all the magic explained above, because the eigenvectors of the
+Covariance matrix are actually the directions of the axes where there is the most variance(most information).
+and that we call Principal Components.
+And eigenvalues are simply the coefficients attached to eigenvectors, which give the amount of variance carried in 
+each Principal Component.
 explained vaariance
 
 Limitation of PCA:-  It is not for Non-linear data 
