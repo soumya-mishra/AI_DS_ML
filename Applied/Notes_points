@@ -108,10 +108,42 @@ Plot X -persantile and Y - percantile . If both are straight line - it is Gaussi
 data = np.random.normal(loc = 0,scale =1,size=1000) # loc is mean, scale  = variance 
 stas.probblot(data,dist = norm, plot = pylab)
 
-How Distribution are used:
+How Distribution are used: if we know mu(mean) and sigma(std) then we can plot PDF and CDF.
 
+Chebysev's in equality:
+For Guassian distrubution we can assume 68-95-99.7 rule
+but if we do not know the distribution - but know mu and sigma , then we can say some % percentage of lies between 2/3/4  sigma
 
+at least 1 − 1/k2 of the distribution's values are within k standard deviations of the mean. 2sigma, k=2 , 1-1/4 = 3/4 = 75%
 
+Discrete & Continuous Uniform distribution:
+for discrete - we call Probability Mass function 
+for continuous - we call PDF 
+Application of Uniform distribution :
+How to generate uniform random sample - random.random  
+
+Bernoulli and Binomial distribution : both are discrete dist 
+
+Bernouli- coin toss  p+q = 1
+
+Binomial Distribution: coin toss n times,
+
+pmf  =(n,k)p^k(1-p)^n-k
+
+Log Normal distribution: if log(x) is normally distributed then we call x is log normally distributed
+Application - length of comments posted in internate
+
+Power law distribution :
+Pareto distribution - 
+
+BOX-COX tarnsformation .
+
+y = x^lambda - 1 / lambda if lambda not 0
+    log(x) if lambda = 0 
+    
+stats 
+
+Weibull dist:
 
 
 
