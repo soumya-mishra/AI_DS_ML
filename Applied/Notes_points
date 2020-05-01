@@ -223,6 +223,58 @@ The number of participants from each subgroup is determined by their number rela
  As you can see, each number you pick is proportionate to the 
  overall percentage of people in each category (e.g., 40% = 8 people).
 
+Dimensionality Reduction:
+
+row vector & column vector(default)
+
+Feature Normalization/Column normalization
+
+ai = ai - min(a) / max(a) - min(a)
+
+Covariance matrix:
+----------------
+Cov(x,y) = Cov(y,x)
+
+given a matrix  n * d where d is the no of features.
+the covariance matrix of X  (n *d) is S (d*d) - square matrix 
+calculate covariance of each col with other col
+
+PCA:
+https://builtin.com/data-science/step-step-explanation-principal-component-analysis
+1.standardize variables so that each one of them contributes equally to the analysis.
+2.Covariance matrix computations
+ sometimes, variables are highly correlated in such a way that they contain redundant information.
+ So, in order to identify these correlations, we compute the covariance matrix.
+3.COMPUTE THE EIGENVECTORS AND EIGENVALUES OF THE COVARIANCE MATRIX TO IDENTIFY THE PRINCIPAL COMPONENTS
+
+principal components:
+So, the idea is 10-dimensional data gives you 10 principal components, but PCA tries to put maximum possible information in the first component, then maximum remaining information in the second and so on.
+ principal component accounts for the largest possible variance in the data set
+ 
+it is eigenvectors and eigenvalues who are behind all the magic explained above, because the eigenvectors of the Covariance matrix are actually the directions of the axes where there is the most variance(most information).and that we call Principal Components.
+And eigenvalues are simply the coefficients attached to eigenvectors, which give the amount of variance carried in each Principal Component.
+explained vaariance
+
+Limitation of PCA:-  It is not for Non-linear data 
+PCA preserve global shaoe of data. It does not preserve local distribution into consdiretation
+
+T-SNE: t-distributed  stochastic neighbourhood embedding
+Neighbourhood  - geometrically close - distance between points are close
+embedding - Convert d dimension poitns  to 2d(lower dimension)  via projection 
+
+preserve distances of points in neighbourhood
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
