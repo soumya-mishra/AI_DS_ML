@@ -145,6 +145,112 @@ stats
 
 Weibull dist:
 
+Relationship between random variable:
+
+Covariance : cov(x,y)  = submession{ ( x = mean(x) ) ( y - mean(y) ) } / n
+
+pearson correlation  -  Cov(x,y) / std(x) std(y)
+
+It can not determine Non linear relationship
+
+Spearman Rank correlation Coefficient: -  It can read Non-linear relationship.
+
+create rank of x  - sort it and give rank
+
+x  y   rx   ry
+
+compute pearson corr coef for rank(x) and rank(y)
+
+Correlation vs Causation:
+
+Confidence Interval: Point estimate is not always right.
+
+if we give range/interval (162 , 175) with 90% probability
+
+for gaussuan distribution - mean = 168 and std= 5 
+(mean - 2*std)  and  (mean + 2*std)  lies 95% observation  . this is CI
+
+CI using Bootstraping :
+Bootstraping: Sampling with replacement 
+
+Non - parametric tech - does not make any assumptions about the distribution of data.
+Bootstrap is non-parametric
+
+Hypothesis testing:
+------------------
+it follows proof by contradiction 
+it is statistical inference tech
+2 datasets are compared,  datasets are obtained by sampling
+Null hypothesis - propses no relationship among datasets
+Alternate hypothesis - relationship between datasets
+Significance level  - alpha - 0.05 or 0.01
+Type 1 and Type 2 errros
+
+steps:
+1.state the relevant null and alternative hypotheses
+2.Decide which test is appropriate, and state the relevant test statistic T.  
+ test statistics  - follow normal distribution or t-distributions
+3. calculate the p- value
+
+Test Statistic:  is the testing process 
+ a.Chi- squared test
+ b. t -student test
+ c.Fishers z-test  etc.
+ 
+Reject the null hypothesis, in favor of the alternative hypothesis,
+if and only if the p-value is less than (or equal to) the significance level (the selected probability) threshold .
+
+P-value is ( observation by experiment / Assumptions) . let say it is 3%  , less than 5%  , Alternate hypothesis is true
+p(obs/H0) < 5%
+
+for observation we use -Test statistics
+
+K- S test:
+compare 2 random variable have same distributions .?
+compare CDF of 2 random variable , 
+stats.kstest(x, 'norm') - for normal distribution
+KS test uses hypothesis testing
+
+Proportional Sampling :
+P S is used when the population is composed of several subgroups that are vastly different in number.
+The number of participants from each subgroup is determined by their number relative to the entire population.
+
+ imagine you want to create a council of 20 employees that will meet and recommend possible 
+ changes to the employee handbook.
+ Let's say 40% of your employees are in Sales and Marketing, 30% in Customer Service, 
+ 20% of your employees are in IT, and 10% in Finance. You will randomly select 8 people from Sales and Marketing, 
+ 6 from Customer Service, 4 from IT, and 2 from Finance. 
+ As you can see, each number you pick is proportionate to the 
+ overall percentage of people in each category (e.g., 40% = 8 people).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
