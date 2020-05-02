@@ -277,7 +277,11 @@ T-sne is iterative algo and randomized
 paramters: stepsize = no of iterations
 perplexity -  no of neighbours/points it should consider 
 5,100, 1000 - consider 1000 points a neighbourhood . Keep increasing and check whihc one stable
-
+-------------------------
+Supervised:
+Support Vector machine:
+Maximal Margin Hyperplane 
+Support vectors | Margin 
 
 
 
