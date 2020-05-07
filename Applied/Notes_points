@@ -269,7 +269,7 @@ embedding - Convert d dimension poitns  to 2d(lower dimension)  via projection
 preserve distances of points in neighbourhood
 crowding problem in t-sne :
 It is impossible to preserve distances in all the neighbourhood.
-poits are getting crowded.
+points are getting crowded.
 
 to avaoid crowding problem we use t-distibution
 
