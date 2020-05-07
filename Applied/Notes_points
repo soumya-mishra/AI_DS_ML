@@ -27,7 +27,7 @@ what is median absolute deviation(MAD)  -  it is robust
 Perctiles: Percentages of points 
 50th percintile say is 50% value is less than that value
 basicallt 50th percitile is median
-10th percintile is 105 value is less than that point. 25th 50th 75th percintiles are called Quartiles.
+10th percintile is 10% value is less than that point. 25th 50th 75th percintiles are called Quartiles.
 
 Box plot:  quartiles plot. 25th - 50th - 75th , Whiskers - shows the outliers
 IQR = Q3 −  Q1
