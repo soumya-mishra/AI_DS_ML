@@ -25,9 +25,9 @@ if more than 50% of values are corrupted or outlier, then median is corrupted.
 what is median absolute deviation(MAD)  -  it is robust 
 
 Perctiles: Percentages of points 
-50th percintile say is 50% value is less than that value
-basicallt 50th percitile is median
-10th percintile is 10% value is less than that point. 25th 50th 75th percintiles are called Quartiles.
+50th percentile say is 50% value is less than that value
+50th percentile is median
+10th percentile is 10% value is less than that point. 25th 50th 75th percentiles are called Quartiles.
 
 Box plot:  quartiles plot. 25th - 50th - 75th , Whiskers - shows the outliers
 IQR = Q3 −  Q1
@@ -60,9 +60,9 @@ Unit vector  a/||a||
 
 Equation of a line  - ax+by+c = 0   |  wTX+w0 = 0 | y = mx+c 
 plane = ax+by+cz+w0 = 0
-hyperpalce  w1x1 + w2x2+w3x3+...+wnxn +w0 = 0
+hyperplane  w1x1 + w2x2+w3x3+...+wnxn +w0 = 0
 
-passing through origine means  c = 0 ( Y-intercept)
+passing through origin means  c = 0 ( Y-intercept)
 
 Circle: in 2d - x1 and x2 
 
@@ -103,7 +103,7 @@ Q-Q plot is graphical method.
 sort them  and compute percentile  
 
 Create radom variable Y whihc is Gaussian distribution.  Compute the percantile
-Plot X -persantile and Y - percantile . If both are straight line - it is Gaussin dist.
+Plot X -percentile and Y - percentile . If both are straight line - it is Gaussin dist.
 
 data = np.random.normal(loc = 0,scale =1,size=1000) # loc is mean, scale  = variance 
 stas.probblot(data,dist = norm, plot = pylab)
@@ -147,7 +147,7 @@ Weibull dist:
 
 Relationship between random variable:
 
-Covariance : cov(x,y)  = submession{ ( x = mean(x) ) ( y - mean(y) ) } / n
+Covariance : cov(x,y)  = submession{ ( x - mean(x) ) ( y - mean(y) ) } / n
 
 pearson correlation  -  Cov(x,y) / std(x) std(y)
 
