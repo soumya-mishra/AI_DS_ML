@@ -278,10 +278,97 @@ paramters: stepsize = no of iterations
 perplexity -  no of neighbours/points it should consider 
 5,100, 1000 - consider 1000 points a neighbourhood . Keep increasing and check whihc one stable
 -------------------------
-Supervised:
-Support Vector machine:
-Maximal Margin Hyperplane 
-Support vectors | Margin 
+NLP
+--------------
+Data cleaning and duplication 
+Text to vector: why to vector - we can use all math in linear algebra
+how do we convert text to vector: BOW,tf-IDF,w2v,avg w2v,tf-idf w2v 
+text -> d dimensional vector , Similar text to be closer geometrically
+BOW: Bag of words: simple 
+- find set of all unique words in the corpus, and create a vector . let say  d unique words. so vector size is d
+ex: this pasta is very tasty=> whichever word is there put 1, others 0.this way we can create a vector.
+    this pasta is not tasy
+  distance between word is very small. But meaning is completwly opposite
+- sparce vector
+corpus is collection of documents
+documets is each sentence
+similar text must have closer vector
+
+It just count the words 
+     
+Binary BOW - just use 0 or 1 
+BOW - Count the no words in a document 
+
+Stop word removal | Tokenization | Lemmatization 
+
+not is stopwords ,  if we remove NOT then sentence changes 
+so removing stop words is not usueful always. 
+
+Make everything lower case 
+Stemming- stem words porterstemmer, snowballstemmer 
+Lemmatization - 
+
+semantic meaning of words- word 2 vec  ( tasty & Delicious ) BOW create 2 different vector
+
+Unigram , Bigram , ngrams
+bigrams - pairs of word takes to consideration while building vectors 
+
+BOW - complete discard sequece information. When we use Bi,Trigrams we can preserve some info.
+
+for Bi,tri,ngram, the dimensionality increases .compared to unigram 
+
+TF-IDF : Term frequence , Inverse document  frequency 
+
+r1 - w1, w2 w3 w4 w5 w6 
+r2- w1 w3 w4 w5 w6 w8
+
+tf(wi, rj) =  no of times wi in rj / total no of words in rj
+
+D- corpus 
+IDF(Wi, D)  = log ( N/ni) 
+N= no of documents,  ni = no of documents which contais wi
+
+log( N/ni) > 0 
+
+if wi is more frequent, then IDF decreases.  If wi is mor frequent, then IDF is low for that word
+
+TF(wj,rj) *IDF(wj,D) 
+
+Why do we use LOG in IDF ?
+
+zipf's law
+Histograms of words in english  powerlaw distribution
+provide smooth ness 
+TO make TF and IDF in same scale we take log in IDF, TF is  0 -1 .
+
+Word 2 vec :- Take semantic meaning 
+dense vector for a word ,
+
+300 dimensional vector : for a word :more dimension, more information rich 
+w1 and w2 are sematically similar, then v1 and v2 distance is less
+
+google news  -  w2v
+
+neighbourhood of words 
+
+Average word 2 vector :  documents are sequence of words
+Convert sentences to a vector using W2V.
+
+w2v(w1) + w2v(w2) + .... / no fo words(n)   =  vector representation of r1 (douments )
+
+not always works well
+
+tf-idf w2v: 
+calculate the TF-IDF vector for r1 
+calculate w2v for w1
+multiply  tf-idf(w1) *w2v(w1)  + tf-idf(w2)*w2v(w2) + ..../ sum of ( tf-idf) 
+
+it is weighted average 
+
+Sentence --> Vectros 
+Thought Vector 
+
+
 
 
 
