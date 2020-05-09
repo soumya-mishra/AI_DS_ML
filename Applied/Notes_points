@@ -616,6 +616,41 @@ Feature transformation:
 4.log( x1)
 5. e^(x1)
 
+Differentiation:
+dy/dx = slope = tangent at a given point
+
+online differentiation tool
+
+Maxima & Minima : Slope becomes 0.
+
+Vector differentiation:
+[ df/dx1, df/dx2 , df/dx3 ... ]
+
+Chain rule
+
+GRadient descent : TO solve the equation and get maxim and minima is not easy via normal equation method.
+normal equation is  derivative and make it to zero.
+
+GD is a iteriatuve algorithm
+
+1. initialize x0
+2. x1  = x0 - alpha * df/dx0
+
+
+Constraint Optimization:
+constrained optimization (in some contexts called constraint optimization) is the process of optimizing an
+objective function with respect to some variables in the presence of constraints on those variables. 
+
+The objective function is either a cost function or energy function
+
+Langragian multiplier:
+see note 
+
+
+
+
+
+
 
 
 
