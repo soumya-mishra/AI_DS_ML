@@ -583,11 +583,27 @@ Distribution of Error:
 
 Naive Bayes:
 ----------
+Conditional Probability
 
+Independent Events and Mutually exclusive events
 
+Laplace Smoothing:Additive smoothing-  alpha
+----
 
+Log Probabilities:
+-----
+log( p( y| w1,w2...wn) ) 
+compare log probabilities 
+Log convert multiplication to addition
+ log(a*b) = log a+ log b
+ 
+Feature importance in Naive Bayes:
 
+------------------
 
+W* = argmax(YW^TX)  
+
+Find Optimal W*
 
 
 
