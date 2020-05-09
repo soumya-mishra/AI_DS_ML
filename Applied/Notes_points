@@ -368,36 +368,221 @@ it is weighted average
 Sentence --> Vectros 
 Thought Vector 
 
+Preprocessing   - Regualr expression
+
+gensim 
+---------------------------
+K-nearest neighbour - 
+
+neighbourhood - geometrically proximity
+K - how to pick 
+Diatnce between points
+Eucledian, Manhatten, Cosine, Hamming 
+
+cosine distance  =  i- cosine similarity
+
+Decision surfaces 
+Ovrfitting and Underfit 
+Need for cross validation
+K-Fold cross validation 
+
+Visualize Train , cross validation and test datasets
+
+How to determone Overfit and Underfit :
+
+plot error vs K in Knn.
+
+Time based splitting : 
+
+Weighted Knn -  gives weights to each nearest neighbor
+More weight to close points
 
 
+Vornoi diagram : 
+
+KD-tree -  need to reduce KNN time complexity (n) to lower.
+hence we use KD-tree
+
+If dimension is more KDtree does not work
+Also data is not uniform , Then also it does not work.
+
+BALL TREE: Variations of KD tree
+
+Locality Sensitive hashing : LSH
+
+Using hash function, the points which are close go to same bucket. table 
+
+Locality sensitive hashing using Cosine similarity: 
+LSH using Euclidean distance
+
+Probabilistic class label in KNN :
+Mechgrid -  plot the graph in KNN
+
+Imbalanced data set bs Balanced 
+----
+1. Undersampling ( Wastagae of data is consequence )
+2. Oversampling (  100 original point to 900 poitns , Repeating points ) 
+3. Syntehtic points -  Create new ponts with the minority region points 
+    it is called extrpolations 
+    
+ 4. Class wights concept -  minoroty points - give more weights 
+ 
+Multiclass Classification : 
+Run binary classfier multiple times .  N binary classifier 
+
+Similarity Matrix : 
+
+Train and Test set difference : How to determine 
+Use any binary classifier  with modified datset.
+
+Convert D-train to positive class label and 
+D-test into a negative class label.
+Apply K-NN or any binary classifier 
+
+Impact of Outliers:
+
+Local Outlier factor  - detects outlier 
+based on KNN
+
+Compute Local density 
+
+K-Disatance  =  distance of Kth nearest neighbor of Xi from Xi
+
+5th distance of Xi, distance of 5th Nearest neighbor 
+
+Neighborhood of X 
+
+Reachablity Distance : 
+
+Local reachability Density : 
+
+Average reach distance 
+
+For each point Xi compute LOF(xi)
+
+local outlier probability
+
+LOF uses idea of Neighbourhood
 
 
+Scale and Column Standardization :-
+--------------
+
+x' = x-mean(x) / std(x)
+
+Model Intepretability vs Black box model  :
 
 
+Feature importance and Forward feature selection 
+Backward feature ellimination 
+
+Categorical and ordinal feature:
+1.give a number to Categorical feature -  many times fail 
+2. One - hot encoding  - Dimensiaonlity increases 
+3. Domain knowledge
+It is completely problem specific . No right/wrong  
+
+4. Mean replacement.  Use mean value of Yi for each category - This way we can convert Categorical to Numerical Feature.
+Average Age for country India  - 156
+Average age for country US  = 170
+Replace India = 156 , Replace US = 170
+
+Handling Missing Values:
+--------------------
+1. Imputation  -  replce the NaN value with Mean|Median| mode (Most Frequent )
+2. Mean Imputation based on class label .  ( for certain class the there is NaN value in Other columns)
+ take mean replacement of  that columns where  class label is 1 or 0 
+3. Impute the missing value with above strategy and Add new column saying this value is missing .
+   adding missing value features
+4. Model based  Imputations .  Use KNN or other to fill the missing value. COnvert it to standard classificatio or rgression problem 
+ 
+Curse of Dimensionality:
+-----------
+Eucledian distance  - is not valid in multidimensional space.
+Solution is Cosine distance  - Use in text processing ( Impact is less ) 
+
+high dimension and Dense - impact of high dimension is high
+high dimension and sparce  - impact of high dimesion is less
+
+Bias Variance Tradeoff :
+-------------
+Gen_error   = bias + variance + irreducible error 
+Gen_error should be low
+
+Train error and test error
+
+Train error high - High bias 
+
+Test error is high, train error is low - High vairance 
+
+Best and Worst case algorithm:
+--------------------------
+Low latency system 
+choose right distance measure
 
 
+Accuracy:- Measure the performance of model 
+--------
+Never use accuracy as a measure when we have Imbalance dataset
+We can use log loss- when probality gives probability score
+
+Confusion Matrix:
+--------
+  A   1     0 
+P
+1     
+
+0
+
+Total Positve  =  TP + FN
+Total Negative =  TN + FP
+
+TPR = True Positive rate =  TP/Total Postive
+TNR =  TN/ Total Negative 
+
+FPR = FP/ Total Negative
+
+FNR = FN/Total Positive
+
+FN in diseas detection is etremely dangerous, 
+
+Precision| Recall | F1 score :
+
+precision = TP/TP+FP  - This does not care of negative class
+Recall =  TP/TP+FN    - 
+
+F1 Score  = 2 * Precision* Recall / Precision + Recall
+
+Receiver Operating Characteristics : AUC- Area Under  Curve
+-----
+TPR vs FPR  curve in  TPR in Y axis 
+Useful for binary classification
+AUC is not dependent on Y' score.
+
+Log loss:
+--------
+- 1/n Submession ( y log y' + (1-y) log (1-y') )
 
 
+R2 error:
+-------
+Regression problem
+
+SS total =  submession {Y - avg(Y)}^2
+SS res = submession { ( Y- Y' )^2 }
+
+R2 = 1 - ( SS_res/SS_tot )
+
+Median Absolute deviation: MAD
+--------
+Regression metrics 
 
 
+Distribution of Error:
+--
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Naive Bayes:
+----------
 
 
 
