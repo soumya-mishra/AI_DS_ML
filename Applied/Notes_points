@@ -600,10 +600,21 @@ Log convert multiplication to addition
 Feature importance in Naive Bayes:
 
 ------------------
-
+Logistic Regression: Classification 
 W* = argmax(YW^TX)  
 
 Find Optimal W*
+
+Sqaushing and sigmoid function:
+---
+
+Feature transformation:
+------------
+1. Polynomial features 
+2.Trigonometric feature sin(x1),  sin(x1) + cos(x2)
+3. boolean feature - logical OR, AND
+4.log( x1)
+5. e^(x1)
 
 
 
