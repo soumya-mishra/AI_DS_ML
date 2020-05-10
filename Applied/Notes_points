@@ -506,6 +506,10 @@ Curse of Dimensionality:
 Eucledian distance  - is not valid in multidimensional space.
 Solution is Cosine distance  - Use in text processing ( Impact is less ) 
 
+Hughes phenomenon:
+With a fixed number of training samples, the predictive power of a classifier or regressor 
+first increases as number of dimensions or features used is increased but then decreases, which is known as Hughes phenomenon
+
 high dimension and Dense - impact of high dimension is high
 high dimension and sparce  - impact of high dimesion is less
 
