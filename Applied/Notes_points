@@ -299,6 +299,9 @@ It just count the words
 Binary BOW - just use 0 or 1 
 BOW - Count the no words in a document 
 
+HAshing Vectorizer- Hashing trick
+Coutvectorizer
+
 Stop word removal | Tokenization | Lemmatization 
 
 not is stopwords ,  if we remove NOT then sentence changes 
@@ -367,6 +370,8 @@ it is weighted average
 
 Sentence --> Vectros 
 Thought Vector 
+Biovectors - Protein vectors
+
 
 Preprocessing   - Regualr expression
 
