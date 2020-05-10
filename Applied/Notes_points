@@ -654,6 +654,64 @@ The objective function is either a cost function or energy function
 
 Langragian multiplier:
 see note 
+---------------------------
+SVM:-
+support vectors
+
+convex hull
+
+convex polygon - triangle
+Non convex ploygon - min distance between 2 points outside the region
+
+Margin maximization 
+Math formulation :
+W^T X  + b = 0
+W^T X  + b = -1
+W^T X  + b = 1
+
+d = 2/ ||W||
+
+loss function:
+y(W^T X + b) >= 1
+
+Hard maragin SVM  -  data is linearly separable
+
+add zeta .
+
+y(W^T X + b) >= 1 - zeta
+
+minimize misclassification
+
+soft margin SVM:
+ 
+Loss function: Hinge loss - graph is like hinge
+
+max (0, 1- y(W^T X + b) )
+
+we can add regulrazation to loss.
+
+Primal form | Dual form
+
+Kernel trick
+Polynomial kernel
+Radial Basis kernle -  It is popular because it is similar to KNN
+
+Domain specific kernel
+
+libsvm : best library for SVM
+
+nusvm :
+
+SVR ;
+
+
+
+
+
+
+
+
+
 
 
 
