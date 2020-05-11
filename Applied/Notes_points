@@ -704,6 +704,39 @@ nusvm :
 
 SVR ;
 
+Descision Tree:
+----------
+
+IF else  nested, 
+Axis parallel hyperplane
+
+entropy :  - submession ( p(yi)log(p(yi) )
+
+Equi probable - entropy is maximum
+Y - y1 y2 y3 y4 ...
+
+Information gain :Information Gain is also known as Mutual Information
+Gini impurity
+
+Deth of tree increses - Overfitting
+depth of tree  - big hypermaraterr, Find it by cross validation 
+
+Splitting Numerical feaure : by Binning 
+
+In decision tree we do not need standardization:
+DT does not depend upon scaling  -  it only depends  in less than or greater than a  particular value
+
+Categorical Feature with many categories:
+
+Hack  :  convert it to a numerical feature 
+P(yi = 1| y  = 1)
+
+take probality of that categorical feature with target 1 , target 0
+
+
+
+
+
 
 
 
