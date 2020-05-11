@@ -733,11 +733,80 @@ P(yi = 1| y  = 1)
 
 take probality of that categorical feature with target 1 , target 0
 
+Instead of one hot encoding of categorical data, We can use probability like above.
+
+Feature interaction in Decision tree:
+Feature Transformation inherently build in DT
+f1*f2 , f1 and f2
+
+graphviz : visualiation
+
+Random split is better in a tree
+------------------------------------
+Feature Engineering:
+
+Moving window : time seriese , electrocardiogram  . heart rate, ecg data
+
+take a window : 
+
+Fourier Transformation -  Represent time seriese data using F T 
+repeating pattern  . 
+We can decompose the waves in to individual wave 
+
+Time period, frequency, Amplitude  in a sine wave.
+Phase oa wave 
+
+Time domain , Frequency domain 
+
+SIFT -  Scale invariant feature transform. For image detection 
+
+Graph data featurization : 
+
+Indicator Variable :  
+Feature binning :  extesion of indicator variable 
+
+Interaction Variable :  how to solve  -  mathematically combine feature
+
+Model specific featurization:  f1+f2-f3 etc .
+
+Feature Orthogonality : The more different the feaatures are ,The model will be better.
+
+Feature Sclicing :  divide one data set into 2, and build the model
+category 1 and category 2 are different, and each category has sufficient data.
+eg: Desktop traffic and mobile traffic data
+
+Caliberation Model:-
+--------------------
+Caliberation plot:
+Caliberated classifier in SKlearn 
+
+Isotonic Regression :- piecewise linear model
+
+RANSAC - Random sampling consensus .
+robust model in presence of outlier.
+
+Productizing model:
+---------
+pickle file
+joblib.dump
+joblib.load
+
+Store weights and use these weights in other language . in C++ 
+evaluation step in C++ or Java code.
+
+Retraining Models periodically:
+-------------
+stock prices
 
 
+A/B testing :
+----------
+New model, Old model 
+or 2 different types of model
 
-
-
+VC Dimension:
+-----------
+Tell how powerful the class of models
 
 
 
