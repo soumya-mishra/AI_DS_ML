@@ -19,10 +19,12 @@ tuned_model = tune_model('gbc',fold=10)
 ### Model Performance's Visualization
 plot_model(tuned_model,plot = 'auc')
 
-#Precision-recall
+#Precision-
+
 plot_model(tuned_model,plot = 'pr')
 
 #plotting confusion matrix
+
 plot_model(tuned_model,plot = 'confusion_matrix')
 
 ### Ensembling of models
@@ -48,5 +50,5 @@ lightgbm = create_model('lightgbm')
 
 
 #Final stacking models - Pass a meta model as we pass in stacking 
-stacker = stack_models(estimator_list = [lightgbm,xgboost,ridge,catboost,lda,gbc],
-                       meta_model = xgboost,method='hard')
+
+stacker = stack_models(estimator_list = [lightgbm,xgboost,ridge,catboost,lda,gbc],meta_model = xgboost,method='hard')
